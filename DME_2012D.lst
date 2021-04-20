@@ -1,0 +1,3455 @@
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 1
+
+
+   1               		.file	"DME_2012D.c"
+   2               		.arch atmega128
+   3               	__SREG__ = 0x3f
+   4               	__SP_H__ = 0x3e
+   5               	__SP_L__ = 0x3d
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  10               		.stabs	"C:\\AvrEdit\\AVR_Work\\DaWoo\\DME-2012D\\20190427R2/",100,0,0,.Ltext0
+  11               		.stabs	"DME_2012D.c",100,0,0,.Ltext0
+  12               		.text
+  13               	.Ltext0:
+  14               		.stabs	"gcc2_compiled.",60,0,0,0
+  15               		.stabs	"int:t(0,1)=r(0,1);-32768;32767;",128,0,0,0
+  16               		.stabs	"char:t(0,2)=r(0,2);0;127;",128,0,0,0
+  17               		.stabs	"long int:t(0,3)=@s32;r(0,3);0020000000000;0017777777777;",128,0,0,0
+  18               		.stabs	"unsigned int:t(0,4)=r(0,4);0000000000000;0000000177777;",128,0,0,0
+  19               		.stabs	"long unsigned int:t(0,5)=@s32;r(0,5);0000000000000;0037777777777;",128,0,0,0
+  20               		.stabs	"long long int:t(0,6)=@s64;r(0,6);01000000000000000000000;0777777777777777777777;",128,0,0,
+  21               		.stabs	"long long unsigned int:t(0,7)=@s64;r(0,7);0000000000000;01777777777777777777777;",128,0,0,
+  22               		.stabs	"short int:t(0,8)=r(0,8);-32768;32767;",128,0,0,0
+  23               		.stabs	"short unsigned int:t(0,9)=r(0,9);0000000000000;0000000177777;",128,0,0,0
+  24               		.stabs	"signed char:t(0,10)=@s8;r(0,10);-128;127;",128,0,0,0
+  25               		.stabs	"unsigned char:t(0,11)=@s8;r(0,11);0;255;",128,0,0,0
+  26               		.stabs	"float:t(0,12)=r(0,1);4;0;",128,0,0,0
+  27               		.stabs	"double:t(0,13)=r(0,1);4;0;",128,0,0,0
+  28               		.stabs	"long double:t(0,14)=r(0,1);4;0;",128,0,0,0
+  29               		.stabs	"complex int:t(0,15)=s4real:(0,1),0,16;imag:(0,1),16,16;;",128,0,0,0
+  30               		.stabs	"complex float:t(0,16)=R3;8;0;",128,0,0,0
+  31               		.stabs	"complex double:t(0,17)=R3;8;0;",128,0,0,0
+  32               		.stabs	"complex long double:t(0,18)=R3;8;0;",128,0,0,0
+  33               		.stabs	"__builtin_va_list:t(0,19)=*(0,20)=(0,20)",128,0,0,0
+  34               		.stabs	"_Bool:t(0,21)=@s8;-16;",128,0,0,0
+  35               		.stabs	"DME_2012D.c",130,0,0,0
+  36               		.stabs	"C:/AvrEdit/WinAVR/avr/include/avr/io.h",130,0,0,0
+  37               		.stabs	"C:/AvrEdit/WinAVR/avr/include/avr/sfr_defs.h",130,0,0,0
+  38               		.stabn	162,0,0,0
+  39               		.stabs	"C:/AvrEdit/WinAVR/avr/include/avr/iom128.h",130,0,0,0
+  40               		.stabn	162,0,0,0
+  41               		.stabn	162,0,0,0
+  42               		.stabs	"DME_2012D_Sub.h",130,0,0,0
+  43               		.stabs	"MCU_initialize:F(0,20)",36,0,14,MCU_initialize
+  44               	.global	MCU_initialize
+  45               		.type	MCU_initialize, @function
+  46               	MCU_initialize:
+  47               		.stabs	"DME_2012D_Sub.h",132,0,0,.Ltext1
+  48               	.Ltext1:
+   1:DME_2012D_Sub.h **** /*
+   2:DME_2012D_Sub.h **** ***************************************************************************************************
+   3:DME_2012D_Sub.h **** *                            DME-2012D A/V BOARD Controller User Functions
+   4:DME_2012D_Sub.h **** *
+   5:DME_2012D_Sub.h **** *                          (c) Copyright 2012, MARUENG Co., Ltd., Daejeon, South Korea
+   6:DME_2012D_Sub.h **** *                                           All Rights Reserved
+   7:DME_2012D_Sub.h **** *
+   8:DME_2012D_Sub.h **** * File : DME_2012D_Sub.h
+   9:DME_2012D_Sub.h **** * By   : DongHyun Kwon
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 2
+
+
+  10:DME_2012D_Sub.h **** ***************************************************************************************************
+  11:DME_2012D_Sub.h **** */
+  12:DME_2012D_Sub.h **** 
+  13:DME_2012D_Sub.h **** void MCU_initialize(void)			/* initialize ATmege128 MCU */
+  14:DME_2012D_Sub.h **** { 
+  49               		.stabn 68,0,14,.LM1-MCU_initialize
+  50               	.LM1:
+  51               	/* prologue: frame size=0 */
+  52               	/* prologue end (size=0) */
+  15:DME_2012D_Sub.h **** 
+  16:DME_2012D_Sub.h **** 	DDRA	= 0xFF;
+  53               		.stabn 68,0,16,.LM2-MCU_initialize
+  54               	.LM2:
+  55 0000 8FEF      		ldi r24,lo8(-1)
+  56 0002 8ABB      		out 58-0x20,r24
+  17:DME_2012D_Sub.h **** 	PORTA	= 0x00;
+  57               		.stabn 68,0,17,.LM3-MCU_initialize
+  58               	.LM3:
+  59 0004 1BBA      		out 59-0x20,__zero_reg__
+  18:DME_2012D_Sub.h **** 
+  19:DME_2012D_Sub.h **** 	DDRB	= 0x00;
+  60               		.stabn 68,0,19,.LM4-MCU_initialize
+  61               	.LM4:
+  62 0006 17BA      		out 55-0x20,__zero_reg__
+  20:DME_2012D_Sub.h **** 	PORTB	= 0xFF;
+  63               		.stabn 68,0,20,.LM5-MCU_initialize
+  64               	.LM5:
+  65 0008 88BB      		out 56-0x20,r24
+  21:DME_2012D_Sub.h **** 
+  22:DME_2012D_Sub.h **** 	DDRC	= 0x00;
+  66               		.stabn 68,0,22,.LM6-MCU_initialize
+  67               	.LM6:
+  68 000a 14BA      		out 52-0x20,__zero_reg__
+  23:DME_2012D_Sub.h **** 	PORTC	= 0xFF;
+  69               		.stabn 68,0,23,.LM7-MCU_initialize
+  70               	.LM7:
+  71 000c 85BB      		out 53-0x20,r24
+  24:DME_2012D_Sub.h **** 
+  25:DME_2012D_Sub.h **** 	DDRD	= 0xFF;
+  72               		.stabn 68,0,25,.LM8-MCU_initialize
+  73               	.LM8:
+  74 000e 81BB      		out 49-0x20,r24
+  26:DME_2012D_Sub.h **** 	PORTD	= 0x00;
+  75               		.stabn 68,0,26,.LM9-MCU_initialize
+  76               	.LM9:
+  77 0010 12BA      		out 50-0x20,__zero_reg__
+  27:DME_2012D_Sub.h **** 
+  28:DME_2012D_Sub.h ****   DDRE	= 0x00;	
+  78               		.stabn 68,0,28,.LM10-MCU_initialize
+  79               	.LM10:
+  80 0012 12B8      		out 34-0x20,__zero_reg__
+  29:DME_2012D_Sub.h ****   PORTE	= 0xFF;
+  81               		.stabn 68,0,29,.LM11-MCU_initialize
+  82               	.LM11:
+  83 0014 83B9      		out 35-0x20,r24
+  30:DME_2012D_Sub.h ****   
+  31:DME_2012D_Sub.h ****   DDRF	= 0xFF;
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 3
+
+
+  84               		.stabn 68,0,31,.LM12-MCU_initialize
+  85               	.LM12:
+  86 0016 8093 6100 		sts 97,r24
+  32:DME_2012D_Sub.h ****   PORTF	= 0x00;
+  87               		.stabn 68,0,32,.LM13-MCU_initialize
+  88               	.LM13:
+  89 001a 1092 6200 		sts 98,__zero_reg__
+  33:DME_2012D_Sub.h ****   
+  34:DME_2012D_Sub.h ****   DDRG	= 0x00;
+  90               		.stabn 68,0,34,.LM14-MCU_initialize
+  91               	.LM14:
+  92 001e 1092 6400 		sts 100,__zero_reg__
+  35:DME_2012D_Sub.h ****   PORTG	= 0x0F;
+  93               		.stabn 68,0,35,.LM15-MCU_initialize
+  94               	.LM15:
+  95 0022 8FE0      		ldi r24,lo8(15)
+  96 0024 8093 6500 		sts 101,r24
+  36:DME_2012D_Sub.h **** 
+  37:DME_2012D_Sub.h **** }
+  97               		.stabn 68,0,37,.LM16-MCU_initialize
+  98               	.LM16:
+  99               	/* epilogue: frame size=0 */
+ 100 0028 0895      		ret
+ 101               	/* epilogue end (size=1) */
+ 102               	/* function MCU_initialize size 21 (20) */
+ 103               		.size	MCU_initialize, .-MCU_initialize
+ 104               	.Lscope0:
+ 105               		.stabs	"",36,0,0,.Lscope0-MCU_initialize
+ 106               		.stabs	"Delay_nop:F(0,20)",36,0,41,Delay_nop
+ 107               	.global	Delay_nop
+ 108               		.type	Delay_nop, @function
+ 109               	Delay_nop:
+  38:DME_2012D_Sub.h **** 
+  39:DME_2012D_Sub.h **** 
+  40:DME_2012D_Sub.h **** void Delay_nop(void)		/* time delay for us */
+  41:DME_2012D_Sub.h **** { 
+ 110               		.stabn 68,0,41,.LM17-Delay_nop
+ 111               	.LM17:
+ 112               	/* prologue: frame size=0 */
+ 113               	/* prologue end (size=0) */
+ 114               		.stabn 68,0,41,.LM18-Delay_nop
+ 115               	.LM18:
+ 116               	/* epilogue: frame size=0 */
+ 117 002a 0895      		ret
+ 118               	/* epilogue end (size=1) */
+ 119               	/* function Delay_nop size 1 (0) */
+ 120               		.size	Delay_nop, .-Delay_nop
+ 121               	.Lscope1:
+ 122               		.stabs	"",36,0,0,.Lscope1-Delay_nop
+ 123               		.stabs	"Delay_us:F(0,20)",36,0,47,Delay_us
+ 124               		.stabs	"time_us:P(0,11)",64,0,46,24
+ 125               	.global	Delay_us
+ 126               		.type	Delay_us, @function
+ 127               	Delay_us:
+  42:DME_2012D_Sub.h **** 
+  43:DME_2012D_Sub.h **** }
+  44:DME_2012D_Sub.h **** 
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 4
+
+
+  45:DME_2012D_Sub.h **** 
+  46:DME_2012D_Sub.h **** void Delay_us(unsigned char time_us)		/* time delay for us */
+  47:DME_2012D_Sub.h **** { register unsigned char i;
+ 128               		.stabn 68,0,47,.LM19-Delay_us
+ 129               	.LM19:
+ 130               	/* prologue: frame size=0 */
+ 131               	/* prologue end (size=0) */
+  48:DME_2012D_Sub.h **** 
+  49:DME_2012D_Sub.h ****   for(i = 0; i < time_us; i++)			// 4 cycle +
+ 132               		.stabn 68,0,49,.LM20-Delay_us
+ 133               	.LM20:
+ 134               	.LBB2:
+ 135 002c 90E0      		ldi r25,lo8(0)
+ 136 002e 9817      		cp r25,r24
+ 137 0030 38F4      		brsh .L10
+ 138               	.L8:
+  50:DME_2012D_Sub.h ****     { asm volatile(" PUSH  R0 ");		// 2 cycle +
+ 139               		.stabn 68,0,50,.LM21-Delay_us
+ 140               	.LM21:
+ 141               	/* #APP */
+ 142 0032 0F92      		 PUSH  R0 
+  51:DME_2012D_Sub.h ****       asm volatile(" POP   R0 ");		// 2 cycle +
+ 143               		.stabn 68,0,51,.LM22-Delay_us
+ 144               	.LM22:
+ 145 0034 0F90      		 POP   R0 
+  52:DME_2012D_Sub.h **** //    asm volatile(" PUSH  R0 ");		// 2 cycle +
+  53:DME_2012D_Sub.h **** //    asm volatile(" POP   R0 ");		// 2 cycle +
+  54:DME_2012D_Sub.h ****       asm volatile(" PUSH  R0 ");		// 2 cycle +
+ 146               		.stabn 68,0,54,.LM23-Delay_us
+ 147               	.LM23:
+ 148 0036 0F92      		 PUSH  R0 
+  55:DME_2012D_Sub.h ****       asm volatile(" POP   R0 ");		// 2 cycle = 16 cycle = 1 us for 16MHz
+ 149               		.stabn 68,0,55,.LM24-Delay_us
+ 150               	.LM24:
+ 151 0038 0F90      		 POP   R0 
+ 152               		.stabn 68,0,49,.LM25-Delay_us
+ 153               	.LM25:
+ 154               	/* #NOAPP */
+ 155 003a 9F5F      		subi r25,lo8(-(1))
+ 156 003c 9817      		cp r25,r24
+ 157 003e C8F3      		brlo .L8
+ 158               	.L10:
+  56:DME_2012D_Sub.h ****     }
+  57:DME_2012D_Sub.h **** }
+ 159               		.stabn 68,0,57,.LM26-Delay_us
+ 160               	.LM26:
+ 161 0040 0895      		ret
+ 162               	.LBE2:
+ 163               	/* epilogue: frame size=0 */
+ 164               	/* epilogue: noreturn */
+ 165               	/* epilogue end (size=0) */
+ 166               	/* function Delay_us size 15 (15) */
+ 167               		.size	Delay_us, .-Delay_us
+ 168               		.stabs	"i:r(0,11)",64,0,47,25
+ 169               		.stabn	192,0,0,.LBB2-Delay_us
+ 170               		.stabn	224,0,0,.LBE2-Delay_us
+ 171               	.Lscope2:
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 5
+
+
+ 172               		.stabs	"",36,0,0,.Lscope2-Delay_us
+ 173               		.stabs	"Delay_ms:F(0,20)",36,0,61,Delay_ms
+ 174               		.stabs	"time_ms:P(0,4)",64,0,60,16
+ 175               	.global	Delay_ms
+ 176               		.type	Delay_ms, @function
+ 177               	Delay_ms:
+  58:DME_2012D_Sub.h **** 
+  59:DME_2012D_Sub.h **** 
+  60:DME_2012D_Sub.h **** void Delay_ms(unsigned int time_ms)		/* time delay for ms */
+  61:DME_2012D_Sub.h **** { register unsigned int i;
+ 178               		.stabn 68,0,61,.LM27-Delay_ms
+ 179               	.LM27:
+ 180               	/* prologue: frame size=0 */
+ 181 0042 0F93      		push r16
+ 182 0044 1F93      		push r17
+ 183 0046 CF93      		push r28
+ 184 0048 DF93      		push r29
+ 185               	/* prologue end (size=4) */
+ 186 004a 8C01      		movw r16,r24
+  62:DME_2012D_Sub.h **** 
+  63:DME_2012D_Sub.h ****   for(i = 0; i < time_ms; i++)
+ 187               		.stabn 68,0,63,.LM28-Delay_ms
+ 188               	.LM28:
+ 189               	.LBB3:
+ 190 004c C0E0      		ldi r28,lo8(0)
+ 191 004e D0E0      		ldi r29,hi8(0)
+ 192 0050 C817      		cp r28,r24
+ 193 0052 D907      		cpc r29,r25
+ 194 0054 80F4      		brsh .L18
+ 195               	.L16:
+  64:DME_2012D_Sub.h ****     { Delay_us(250);
+ 196               		.stabn 68,0,64,.LM29-Delay_ms
+ 197               	.LM29:
+ 198 0056 8AEF      		ldi r24,lo8(-6)
+ 199 0058 0E94 0000 		call Delay_us
+  65:DME_2012D_Sub.h ****       Delay_us(250);
+ 200               		.stabn 68,0,65,.LM30-Delay_ms
+ 201               	.LM30:
+ 202 005c 8AEF      		ldi r24,lo8(-6)
+ 203 005e 0E94 0000 		call Delay_us
+  66:DME_2012D_Sub.h ****       Delay_us(250);
+ 204               		.stabn 68,0,66,.LM31-Delay_ms
+ 205               	.LM31:
+ 206 0062 8AEF      		ldi r24,lo8(-6)
+ 207 0064 0E94 0000 		call Delay_us
+  67:DME_2012D_Sub.h ****       Delay_us(150);
+ 208               		.stabn 68,0,67,.LM32-Delay_ms
+ 209               	.LM32:
+ 210 0068 86E9      		ldi r24,lo8(-106)
+ 211 006a 0E94 0000 		call Delay_us
+ 212               		.stabn 68,0,63,.LM33-Delay_ms
+ 213               	.LM33:
+ 214 006e 2196      		adiw r28,1
+ 215 0070 C017      		cp r28,r16
+ 216 0072 D107      		cpc r29,r17
+ 217 0074 80F3      		brlo .L16
+ 218               	.L18:
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 6
+
+
+  68:DME_2012D_Sub.h ****     }
+  69:DME_2012D_Sub.h **** }
+ 219               		.stabn 68,0,69,.LM34-Delay_ms
+ 220               	.LM34:
+ 221               	.LBE3:
+ 222               	/* epilogue: frame size=0 */
+ 223 0076 DF91      		pop r29
+ 224 0078 CF91      		pop r28
+ 225 007a 1F91      		pop r17
+ 226 007c 0F91      		pop r16
+ 227 007e 0895      		ret
+ 228               	/* epilogue end (size=5) */
+ 229               	/* function Delay_ms size 31 (22) */
+ 230               		.size	Delay_ms, .-Delay_ms
+ 231               		.stabs	"i:r(0,4)",64,0,61,28
+ 232               		.stabn	192,0,0,.LBB3-Delay_ms
+ 233               		.stabn	224,0,0,.LBE3-Delay_ms
+ 234               	.Lscope3:
+ 235               		.stabs	"",36,0,0,.Lscope3-Delay_ms
+ 236               		.stabs	"TX0_char:F(0,20)",36,0,74,TX0_char
+ 237               		.stabs	"data:P(0,11)",64,0,73,24
+ 238               	.global	TX0_char
+ 239               		.type	TX0_char, @function
+ 240               	TX0_char:
+  70:DME_2012D_Sub.h **** 
+  71:DME_2012D_Sub.h **** 
+  72:DME_2012D_Sub.h **** 
+  73:DME_2012D_Sub.h **** void TX0_char(unsigned char data)		/* transmit a character by USART0 */
+  74:DME_2012D_Sub.h **** {
+ 241               		.stabn 68,0,74,.LM35-TX0_char
+ 242               	.LM35:
+ 243               	/* prologue: frame size=0 */
+ 244               	/* prologue end (size=0) */
+  75:DME_2012D_Sub.h ****   while((UCSR0A & 0x20) == 0x00);		// data register empty ?
+ 245               		.stabn 68,0,75,.LM36-TX0_char
+ 246               	.LM36:
+ 247               	.L20:
+ 248 0080 5D9B      		sbis 43-0x20,5
+ 249 0082 FECF      		rjmp .L20
+  76:DME_2012D_Sub.h ****   UDR0 = data;
+ 250               		.stabn 68,0,76,.LM37-TX0_char
+ 251               	.LM37:
+ 252 0084 8CB9      		out 44-0x20,r24
+  77:DME_2012D_Sub.h **** }
+ 253               		.stabn 68,0,77,.LM38-TX0_char
+ 254               	.LM38:
+ 255               	/* epilogue: frame size=0 */
+ 256 0086 0895      		ret
+ 257               	/* epilogue end (size=1) */
+ 258               	/* function TX0_char size 4 (3) */
+ 259               		.size	TX0_char, .-TX0_char
+ 260               	.Lscope4:
+ 261               		.stabs	"",36,0,0,.Lscope4-TX0_char
+ 262               		.stabs	"TX1_char:F(0,20)",36,0,81,TX1_char
+ 263               		.stabs	"data:P(0,11)",64,0,80,25
+ 264               	.global	TX1_char
+ 265               		.type	TX1_char, @function
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 7
+
+
+ 266               	TX1_char:
+  78:DME_2012D_Sub.h **** 
+  79:DME_2012D_Sub.h **** 
+  80:DME_2012D_Sub.h **** void TX1_char(unsigned char data)		/* transmit a character by USART1 */
+  81:DME_2012D_Sub.h **** {
+ 267               		.stabn 68,0,81,.LM39-TX1_char
+ 268               	.LM39:
+ 269               	/* prologue: frame size=0 */
+ 270               	/* prologue end (size=0) */
+ 271 0088 982F      		mov r25,r24
+  82:DME_2012D_Sub.h ****   while((UCSR1A & 0x20) == 0x00);		// data register empty ?
+ 272               		.stabn 68,0,82,.LM40-TX1_char
+ 273               	.LM40:
+ 274               	.L24:
+ 275 008a 8091 9B00 		lds r24,155
+ 276 008e 85FF      		sbrs r24,5
+ 277 0090 FCCF      		rjmp .L24
+  83:DME_2012D_Sub.h ****   UDR1 = data;
+ 278               		.stabn 68,0,83,.LM41-TX1_char
+ 279               	.LM41:
+ 280 0092 9093 9C00 		sts 156,r25
+  84:DME_2012D_Sub.h **** }
+ 281               		.stabn 68,0,84,.LM42-TX1_char
+ 282               	.LM42:
+ 283               	/* epilogue: frame size=0 */
+ 284 0096 0895      		ret
+ 285               	/* epilogue end (size=1) */
+ 286               	/* function TX1_char size 8 (7) */
+ 287               		.size	TX1_char, .-TX1_char
+ 288               	.Lscope5:
+ 289               		.stabs	"",36,0,0,.Lscope5-TX1_char
+ 290               		.stabs	"Beep:F(0,20)",36,0,87,Beep
+ 291               	.global	Beep
+ 292               		.type	Beep, @function
+ 293               	Beep:
+  85:DME_2012D_Sub.h **** 
+  86:DME_2012D_Sub.h **** void Beep(void)
+  87:DME_2012D_Sub.h **** {
+ 294               		.stabn 68,0,87,.LM43-Beep
+ 295               	.LM43:
+ 296               	/* prologue: frame size=0 */
+ 297               	/* prologue end (size=0) */
+  88:DME_2012D_Sub.h **** 	sbi(PORTD,7);
+ 298               		.stabn 68,0,88,.LM44-Beep
+ 299               	.LM44:
+ 300 0098 979A      		sbi 50-0x20,7
+  89:DME_2012D_Sub.h **** 	Delay_ms(50);
+ 301               		.stabn 68,0,89,.LM45-Beep
+ 302               	.LM45:
+ 303 009a 82E3      		ldi r24,lo8(50)
+ 304 009c 90E0      		ldi r25,hi8(50)
+ 305 009e 0E94 0000 		call Delay_ms
+  90:DME_2012D_Sub.h **** 	cbi(PORTD,7);
+ 306               		.stabn 68,0,90,.LM46-Beep
+ 307               	.LM46:
+ 308 00a2 9798      		cbi 50-0x20,7
+  91:DME_2012D_Sub.h **** }
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 8
+
+
+ 309               		.stabn 68,0,91,.LM47-Beep
+ 310               	.LM47:
+ 311               	/* epilogue: frame size=0 */
+ 312 00a4 0895      		ret
+ 313               	/* epilogue end (size=1) */
+ 314               	/* function Beep size 7 (6) */
+ 315               		.size	Beep, .-Beep
+ 316               	.Lscope6:
+ 317               		.stabs	"",36,0,0,.Lscope6-Beep
+ 318               		.stabn	162,0,0,0
+ 319               		.stabs	"C:/AvrEdit/WinAVR/avr/include/avr/interrupt.h",130,0,0,0
+ 320               		.stabn	162,0,0,0
+ 321               		.stabs	"C:/AvrEdit/WinAVR/avr/include/avr/math.h",130,0,0,0
+ 322               		.stabn	162,0,0,0
+ 323               		.stabs	"C:/AvrEdit/WinAVR/avr/include/avr/signal.h",130,0,0,0
+ 324               		.stabn	162,0,0,0
+ 325               		.stabs	"C:/AvrEdit/WinAVR/avr/include/string.h",130,0,0,0
+ 326               		.stabs	"C:/AvrEdit/WinAVR/lib/gcc-lib/avr/3.3.1/include/stddef.h",130,0,0,0
+ 327               		.stabs	"size_t:t(10,1)=(0,4)",128,0,213,0
+ 328               		.stabn	162,0,0,0
+ 329               		.stabn	162,0,0,0
+ 330               		.stabs	"C:/AvrEdit/WinAVR/avr/include/stdlib.h",130,0,0,0
+ 331               		.stabs	"C:/AvrEdit/WinAVR/lib/gcc-lib/avr/3.3.1/include/stddef.h",130,0,0,0
+ 332               		.stabs	"wchar_t:t(12,1)=(0,1)",128,0,325,0
+ 333               		.stabn	162,0,0,0
+ 334               		.stabs	"div_t:t(11,1)=(11,2)=s4quot:(0,1),0,16;rem:(0,1),16,16;;",128,0,63,0
+ 335               		.stabs	"ldiv_t:t(11,3)=(11,4)=s8quot:(0,3),0,32;rem:(0,3),32,32;;",128,0,69,0
+ 336               		.stabs	"__compar_fn_t:t(11,5)=(11,6)=*(11,7)=f(0,1)",128,0,72,0
+ 337               		.stabn	162,0,0,0
+ 338               	.global	ETI_LOS_TEMP
+ 339               		.data
+ 340               		.type	ETI_LOS_TEMP, @object
+ 341               		.size	ETI_LOS_TEMP, 1
+ 342               	ETI_LOS_TEMP:
+ 343 0000 FF        		.byte	-1
+ 344               	.global	Time_Count
+ 345               		.type	Time_Count, @object
+ 346               		.size	Time_Count, 2
+ 347               	Time_Count:
+ 348 0001 0A00      		.word	10
+ 349               	.global	Serial_Time_Count0
+ 350               		.type	Serial_Time_Count0, @object
+ 351               		.size	Serial_Time_Count0, 2
+ 352               	Serial_Time_Count0:
+ 353 0003 6400      		.word	100
+ 354               	.global	Time_Flag
+ 355               	.global	Time_Flag
+ 356               		.section .bss
+ 357               		.type	Time_Flag, @object
+ 358               		.size	Time_Flag, 2
+ 359               	Time_Flag:
+ 360 0000 0000      		.skip 2,0
+ 361               	.global	Serial_Time_Count1
+ 362               		.data
+ 363               		.type	Serial_Time_Count1, @object
+ 364               		.size	Serial_Time_Count1, 2
+ 365               	Serial_Time_Count1:
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 9
+
+
+ 366 0005 6400      		.word	100
+ 367               	.global	Key_Flag
+ 368               	.global	Key_Flag
+ 369               		.section .bss
+ 370               		.type	Key_Flag, @object
+ 371               		.size	Key_Flag, 1
+ 372               	Key_Flag:
+ 373 0002 00        		.skip 1,0
+ 374               	.global	Remote_Flag
+ 375               	.global	Remote_Flag
+ 376               		.type	Remote_Flag, @object
+ 377               		.size	Remote_Flag, 1
+ 378               	Remote_Flag:
+ 379 0003 00        		.skip 1,0
+ 380               	.global	RESET_FLAG
+ 381               	.global	RESET_FLAG
+ 382               		.type	RESET_FLAG, @object
+ 383               		.size	RESET_FLAG, 1
+ 384               	RESET_FLAG:
+ 385 0004 00        		.skip 1,0
+ 386               	.global	READY_FLAG
+ 387               		.data
+ 388               		.type	READY_FLAG, @object
+ 389               		.size	READY_FLAG, 1
+ 390               	READY_FLAG:
+ 391 0007 02        		.byte	2
+ 392               		.text
+ 393               		.stabs	"__vector_18:F(0,20)",36,0,58,__vector_18
+ 394               	.global	__vector_18
+ 395               		.type	__vector_18, @function
+ 396               	__vector_18:
+ 397               		.stabs	"DME_2012D.c",132,0,0,.Ltext2
+ 398               	.Ltext2:
+   1:DME_2012D.c   **** /*
+   2:DME_2012D.c   **** ***************************************************************************************************
+   3:DME_2012D.c   **** *                            DME-2012D A/V BOARD Controller Main Functions
+   4:DME_2012D.c   **** *
+   5:DME_2012D.c   **** *                          (c) Copyright 2012, MARUENG co., ltd., Daejeon, South Korea
+   6:DME_2012D.c   **** *                                           All Rights Reserved
+   7:DME_2012D.c   **** *
+   8:DME_2012D.c   **** * File : DME_2012D.C
+   9:DME_2012D.c   **** * By   : DongHyun Kwon
+  10:DME_2012D.c   **** ***************************************************************************************************
+  11:DME_2012D.c   **** 
+  12:DME_2012D.c   **** ***************************************************************************************************
+  13:DME_2012D.c   ****   ATMEGA128 Fuse Bits
+  14:DME_2012D.c   ****   /BootLock12 /BootLock11  /BootLock02  /BootLock01  /Lock2 /Lock1
+  15:DME_2012D.c   ****                        /M103C  /WDTON
+  16:DME_2012D.c   ****   /OCDEN  /JTAGEN *CKOPT  *EESAVE /BOOTSZ1  /BOOTSZ0  /BOOTRST
+  17:DME_2012D.c   ****   *BODLEVEL /BODEN  *SUT1 /SUT0 /CKSEL3 /CKSEL2 /CKSEL1 /CKSEL0
+  18:DME_2012D.c   **** ***************************************************************************************************
+  19:DME_2012D.c   **** */
+  20:DME_2012D.c   **** 
+  21:DME_2012D.c   **** // External 11.0592MHz
+  22:DME_2012D.c   **** 
+  23:DME_2012D.c   **** #include <avr/io.h>
+  24:DME_2012D.c   **** #include <DME_2012D_Sub.h>
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 10
+
+
+  25:DME_2012D.c   **** #include <avr/interrupt.h>
+  26:DME_2012D.c   **** #include <avr/math.h>
+  27:DME_2012D.c   **** #include <avr/signal.h>
+  28:DME_2012D.c   **** #include <string.h>
+  29:DME_2012D.c   **** #include <stdlib.h>
+  30:DME_2012D.c   **** 
+  31:DME_2012D.c   **** 
+  32:DME_2012D.c   **** unsigned char ETI_LOS,ETI_LOS_BUF,ETI_LOS_TEMP=0xFF;
+  33:DME_2012D.c   **** unsigned int  i,j,Time_Count=10,Serial_Count0,Buf_Count0,Serial_Time_Count0=100,Time_Flag=0;
+  34:DME_2012D.c   **** unsigned int  Serial_Count1,Buf_Count1,Serial_Time_Count1=100;
+  35:DME_2012D.c   **** unsigned char Key_Input,Key_Flag=0,Remote_Flag=0;
+  36:DME_2012D.c   **** unsigned char SW_HOME_A,SW_HOME_B;
+  37:DME_2012D.c   **** 
+  38:DME_2012D.c   **** unsigned char RXD_BUF0[30],RXD_BUF1[30];
+  39:DME_2012D.c   **** 
+  40:DME_2012D.c   **** unsigned char INPUT_TYPE_A,INPUT_TYPE_B;
+  41:DME_2012D.c   **** unsigned char E_SYNC_A,E_FCNT_A,E_FCRC_A,E_HCRC_A,AUDIO_MUTE_A;
+  42:DME_2012D.c   **** unsigned char E_SYNC_B,E_FCNT_B,E_FCRC_B,E_HCRC_B,AUDIO_MUTE_B;
+  43:DME_2012D.c   **** 
+  44:DME_2012D.c   **** unsigned char RESET_FLAG=0,READY_FLAG=2;
+  45:DME_2012D.c   **** 
+  46:DME_2012D.c   **** unsigned char RM_RST_KEY,RM_RST_KEY_Flag;
+  47:DME_2012D.c   **** unsigned char Key_Clear,Key_Clear_Flag;
+  48:DME_2012D.c   **** 
+  49:DME_2012D.c   **** unsigned char LED_TIME_Count;
+  50:DME_2012D.c   **** 
+  51:DME_2012D.c   **** unsigned char ETI_LOS_BUF0,ETI_LOS_BUF1;
+  52:DME_2012D.c   **** 
+  53:DME_2012D.c   **** unsigned long	Log_LED_Clear_Time_Count;
+  54:DME_2012D.c   **** 
+  55:DME_2012D.c   **** 
+  56:DME_2012D.c   **** 
+  57:DME_2012D.c   **** SIGNAL(SIG_UART0_RECV)
+  58:DME_2012D.c   **** {
+ 399               		.stabn 68,0,58,.LM48-__vector_18
+ 400               	.LM48:
+ 401               	/* prologue: frame size=0 */
+ 402 00a6 1F92      		push __zero_reg__
+ 403 00a8 0F92      		push __tmp_reg__
+ 404 00aa 0FB6      		in __tmp_reg__,__SREG__
+ 405 00ac 0F92      		push __tmp_reg__
+ 406 00ae 1124      		clr __zero_reg__
+ 407 00b0 0F93      		push r16
+ 408 00b2 1F93      		push r17
+ 409 00b4 2F93      		push r18
+ 410 00b6 3F93      		push r19
+ 411 00b8 4F93      		push r20
+ 412 00ba 5F93      		push r21
+ 413 00bc 6F93      		push r22
+ 414 00be 7F93      		push r23
+ 415 00c0 8F93      		push r24
+ 416 00c2 9F93      		push r25
+ 417 00c4 AF93      		push r26
+ 418 00c6 BF93      		push r27
+ 419 00c8 CF93      		push r28
+ 420 00ca EF93      		push r30
+ 421 00cc FF93      		push r31
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 11
+
+
+ 422               	/* prologue end (size=20) */
+  59:DME_2012D.c   ****   cli();
+ 423               		.stabn 68,0,59,.LM49-__vector_18
+ 424               	.LM49:
+ 425               	/* #APP */
+ 426 00ce F894      		cli
+  60:DME_2012D.c   **** 	RXD_BUF0[Serial_Count0]=UDR0;
+ 427               		.stabn 68,0,60,.LM50-__vector_18
+ 428               	.LM50:
+ 429               	/* #NOAPP */
+ 430 00d0 8091 0000 		lds r24,Serial_Count0
+ 431 00d4 9091 0000 		lds r25,(Serial_Count0)+1
+ 432 00d8 FC01      		movw r30,r24
+ 433 00da E050      		subi r30,lo8(-(RXD_BUF0))
+ 434 00dc F040      		sbci r31,hi8(-(RXD_BUF0))
+ 435 00de 2CB1      		in r18,44-0x20
+ 436 00e0 2083      		st Z,r18
+  61:DME_2012D.c   **** 	
+  62:DME_2012D.c   **** 	Serial_Count0++;
+ 437               		.stabn 68,0,62,.LM51-__vector_18
+ 438               	.LM51:
+ 439 00e2 9C01      		movw r18,r24
+ 440 00e4 2F5F      		subi r18,lo8(-(1))
+ 441 00e6 3F4F      		sbci r19,hi8(-(1))
+ 442 00e8 3093 0000 		sts (Serial_Count0)+1,r19
+ 443 00ec 2093 0000 		sts Serial_Count0,r18
+  63:DME_2012D.c   **** 
+  64:DME_2012D.c   **** 	if((RXD_BUF0[2] == 0x00) && (RXD_BUF0[3] == 0x01)  && (Serial_Count0 == 13)){
+ 444               		.stabn 68,0,64,.LM52-__vector_18
+ 445               	.LM52:
+ 446 00f0 C091 0000 		lds r28,RXD_BUF0+2
+ 447 00f4 CC23      		tst r28
+ 448 00f6 09F0      		breq .+2
+ 449 00f8 9BC0      		rjmp .L29
+ 450 00fa 8091 0000 		lds r24,RXD_BUF0+3
+ 451 00fe 8130      		cpi r24,lo8(1)
+ 452 0100 09F0      		breq .+2
+ 453 0102 96C0      		rjmp .L29
+ 454 0104 2D30      		cpi r18,13
+ 455 0106 3105      		cpc r19,__zero_reg__
+ 456 0108 09F0      		breq .+2
+ 457 010a 92C0      		rjmp .L29
+  65:DME_2012D.c   **** 
+  66:DME_2012D.c   **** 		// Led Status Data
+  67:DME_2012D.c   **** 		INPUT_TYPE_A = RXD_BUF0[6];
+ 458               		.stabn 68,0,67,.LM53-__vector_18
+ 459               	.LM53:
+ 460 010c 9091 0000 		lds r25,RXD_BUF0+6
+ 461 0110 9093 0000 		sts INPUT_TYPE_A,r25
+  68:DME_2012D.c   **** 		E_SYNC_A = RXD_BUF0[7];
+ 462               		.stabn 68,0,68,.LM54-__vector_18
+ 463               	.LM54:
+ 464 0114 8091 0000 		lds r24,RXD_BUF0+7
+ 465 0118 8093 0000 		sts E_SYNC_A,r24
+  69:DME_2012D.c   **** 		E_FCNT_A = RXD_BUF0[8];
+ 466               		.stabn 68,0,69,.LM55-__vector_18
+ 467               	.LM55:
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 12
+
+
+ 468 011c 8091 0000 		lds r24,RXD_BUF0+8
+ 469 0120 8093 0000 		sts E_FCNT_A,r24
+  70:DME_2012D.c   **** 		E_FCRC_A = RXD_BUF0[9];
+ 470               		.stabn 68,0,70,.LM56-__vector_18
+ 471               	.LM56:
+ 472 0124 8091 0000 		lds r24,RXD_BUF0+9
+ 473 0128 8093 0000 		sts E_FCRC_A,r24
+  71:DME_2012D.c   **** 		E_HCRC_A = RXD_BUF0[10];
+ 474               		.stabn 68,0,71,.LM57-__vector_18
+ 475               	.LM57:
+ 476 012c 8091 0000 		lds r24,RXD_BUF0+10
+ 477 0130 8093 0000 		sts E_HCRC_A,r24
+  72:DME_2012D.c   **** 		
+  73:DME_2012D.c   **** 		if(INPUT_TYPE_A == 0)
+ 478               		.stabn 68,0,73,.LM58-__vector_18
+ 479               	.LM58:
+ 480 0134 9923      		tst r25
+ 481 0136 19F4      		brne .L30
+  74:DME_2012D.c   **** 		{
+  75:DME_2012D.c   **** 			//sbi(PORTF,5);cbi(PORTF,6);cbi(PORTF,7);// NI
+  76:DME_2012D.c   **** 			sbi(PORTA,6);cbi(PORTA,5);cbi(PORTA,4);// NI
+ 482               		.stabn 68,0,76,.LM59-__vector_18
+ 483               	.LM59:
+ 484 0138 DE9A      		sbi 59-0x20,6
+ 485 013a DD98      		cbi 59-0x20,5
+ 486 013c 04C0      		rjmp .L69
+ 487               	.L30:
+  77:DME_2012D.c   **** 		
+  78:DME_2012D.c   **** 		}else if(INPUT_TYPE_A == 1){
+ 488               		.stabn 68,0,78,.LM60-__vector_18
+ 489               	.LM60:
+ 490 013e 9130      		cpi r25,lo8(1)
+ 491 0140 21F4      		brne .L32
+  79:DME_2012D.c   **** 			
+  80:DME_2012D.c   **** 			//cbi(PORTF,5);sbi(PORTF,6);cbi(PORTF,7);// NA 5376
+  81:DME_2012D.c   **** 			cbi(PORTA,6);sbi(PORTA,5);cbi(PORTA,4);// NA 5376
+ 492               		.stabn 68,0,81,.LM61-__vector_18
+ 493               	.LM61:
+ 494 0142 DE98      		cbi 59-0x20,6
+ 495 0144 DD9A      		sbi 59-0x20,5
+ 496               	.L69:
+ 497 0146 DC98      		cbi 59-0x20,4
+ 498 0148 05C0      		rjmp .L31
+ 499               	.L32:
+  82:DME_2012D.c   **** 			
+  83:DME_2012D.c   **** 		}else if(INPUT_TYPE_A == 2){
+ 500               		.stabn 68,0,83,.LM62-__vector_18
+ 501               	.LM62:
+ 502 014a 9230      		cpi r25,lo8(2)
+ 503 014c 19F4      		brne .L31
+  84:DME_2012D.c   **** 			
+  85:DME_2012D.c   **** 			//cbi(PORTF,5);cbi(PORTF,6);sbi(PORTF,7);// NA 5592
+  86:DME_2012D.c   **** 			cbi(PORTA,6);cbi(PORTA,5);sbi(PORTA,4);// NA 5592
+ 504               		.stabn 68,0,86,.LM63-__vector_18
+ 505               	.LM63:
+ 506 014e DE98      		cbi 59-0x20,6
+ 507 0150 DD98      		cbi 59-0x20,5
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 13
+
+
+ 508 0152 DC9A      		sbi 59-0x20,4
+ 509               	.L31:
+  87:DME_2012D.c   **** 		}
+  88:DME_2012D.c   **** 
+  89:DME_2012D.c   **** 		if(E_SYNC_A == 1){	sbi(PORTA,1);sbi(PORTA,0);LED_TIME_Count=0;Log_LED_Clear_Time_Count=0;	}
+ 510               		.stabn 68,0,89,.LM64-__vector_18
+ 511               	.LM64:
+ 512 0154 8091 0000 		lds r24,E_SYNC_A
+ 513 0158 8130      		cpi r24,lo8(1)
+ 514 015a 61F4      		brne .L35
+ 515 015c D99A      		sbi 59-0x20,1
+ 516 015e D89A      		sbi 59-0x20,0
+ 517 0160 1092 0000 		sts LED_TIME_Count,__zero_reg__
+ 518 0164 1092 0000 		sts Log_LED_Clear_Time_Count,__zero_reg__
+ 519 0168 1092 0000 		sts (Log_LED_Clear_Time_Count)+1,__zero_reg__
+ 520 016c 1092 0000 		sts (Log_LED_Clear_Time_Count)+2,__zero_reg__
+ 521 0170 1092 0000 		sts (Log_LED_Clear_Time_Count)+3,__zero_reg__
+ 522               	.L35:
+  90:DME_2012D.c   **** 		if(E_FCNT_A == 1){	sbi(PORTF,5);sbi(PORTF,4);LED_TIME_Count=0;Log_LED_Clear_Time_Count=0;	}
+ 523               		.stabn 68,0,90,.LM65-__vector_18
+ 524               	.LM65:
+ 525 0174 8091 0000 		lds r24,E_FCNT_A
+ 526 0178 8130      		cpi r24,lo8(1)
+ 527 017a A1F4      		brne .L36
+ 528 017c 8091 6200 		lds r24,98
+ 529 0180 8062      		ori r24,lo8(32)
+ 530 0182 8093 6200 		sts 98,r24
+ 531 0186 8091 6200 		lds r24,98
+ 532 018a 8061      		ori r24,lo8(16)
+ 533 018c 8093 6200 		sts 98,r24
+ 534 0190 1092 0000 		sts LED_TIME_Count,__zero_reg__
+ 535 0194 1092 0000 		sts Log_LED_Clear_Time_Count,__zero_reg__
+ 536 0198 1092 0000 		sts (Log_LED_Clear_Time_Count)+1,__zero_reg__
+ 537 019c 1092 0000 		sts (Log_LED_Clear_Time_Count)+2,__zero_reg__
+ 538 01a0 1092 0000 		sts (Log_LED_Clear_Time_Count)+3,__zero_reg__
+ 539               	.L36:
+  91:DME_2012D.c   **** 		if(E_FCRC_A == 1){	sbi(PORTF,3);sbi(PORTF,2);LED_TIME_Count=0;Log_LED_Clear_Time_Count=0;	} 
+ 540               		.stabn 68,0,91,.LM66-__vector_18
+ 541               	.LM66:
+ 542 01a4 8091 0000 		lds r24,E_FCRC_A
+ 543 01a8 8130      		cpi r24,lo8(1)
+ 544 01aa A1F4      		brne .L37
+ 545 01ac 8091 6200 		lds r24,98
+ 546 01b0 8860      		ori r24,lo8(8)
+ 547 01b2 8093 6200 		sts 98,r24
+ 548 01b6 8091 6200 		lds r24,98
+ 549 01ba 8460      		ori r24,lo8(4)
+ 550 01bc 8093 6200 		sts 98,r24
+ 551 01c0 1092 0000 		sts LED_TIME_Count,__zero_reg__
+ 552 01c4 1092 0000 		sts Log_LED_Clear_Time_Count,__zero_reg__
+ 553 01c8 1092 0000 		sts (Log_LED_Clear_Time_Count)+1,__zero_reg__
+ 554 01cc 1092 0000 		sts (Log_LED_Clear_Time_Count)+2,__zero_reg__
+ 555 01d0 1092 0000 		sts (Log_LED_Clear_Time_Count)+3,__zero_reg__
+ 556               	.L37:
+  92:DME_2012D.c   **** 		if(E_HCRC_A == 1){	sbi(PORTF,1);sbi(PORTF,0);LED_TIME_Count=0;Log_LED_Clear_Time_Count=0;	}
+ 557               		.stabn 68,0,92,.LM67-__vector_18
+ 558               	.LM67:
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 14
+
+
+ 559 01d4 8091 0000 		lds r24,E_HCRC_A
+ 560 01d8 8130      		cpi r24,lo8(1)
+ 561 01da A1F4      		brne .L38
+ 562 01dc 8091 6200 		lds r24,98
+ 563 01e0 8260      		ori r24,lo8(2)
+ 564 01e2 8093 6200 		sts 98,r24
+ 565 01e6 8091 6200 		lds r24,98
+ 566 01ea 8160      		ori r24,lo8(1)
+ 567 01ec 8093 6200 		sts 98,r24
+ 568 01f0 1092 0000 		sts LED_TIME_Count,__zero_reg__
+ 569 01f4 1092 0000 		sts Log_LED_Clear_Time_Count,__zero_reg__
+ 570 01f8 1092 0000 		sts (Log_LED_Clear_Time_Count)+1,__zero_reg__
+ 571 01fc 1092 0000 		sts (Log_LED_Clear_Time_Count)+2,__zero_reg__
+ 572 0200 1092 0000 		sts (Log_LED_Clear_Time_Count)+3,__zero_reg__
+ 573               	.L38:
+  93:DME_2012D.c   **** 
+  94:DME_2012D.c   **** 
+  95:DME_2012D.c   **** 		for(Buf_Count0=0;Buf_Count0<Serial_Count0;Buf_Count0++)
+ 574               		.stabn 68,0,95,.LM68-__vector_18
+ 575               	.LM68:
+ 576 0204 1092 0000 		sts (Buf_Count0)+1,__zero_reg__
+ 577 0208 1092 0000 		sts Buf_Count0,__zero_reg__
+ 578 020c 80E0      		ldi r24,lo8(0)
+ 579 020e 90E0      		ldi r25,hi8(0)
+ 580 0210 2091 0000 		lds r18,Serial_Count0
+ 581 0214 3091 0000 		lds r19,(Serial_Count0)+1
+ 582 0218 8217      		cp r24,r18
+ 583 021a 9307      		cpc r25,r19
+ 584 021c 08F0      		brlo .+2
+ 585 021e 6EC0      		rjmp .L70
+ 586 0220 E0E0      		ldi r30,lo8(RXD_BUF0)
+ 587 0222 F0E0      		ldi r31,hi8(RXD_BUF0)
+ 588               	.L43:
+  96:DME_2012D.c   **** 		{
+  97:DME_2012D.c   **** 			RXD_BUF0[Buf_Count0]=0x00;
+ 589               		.stabn 68,0,97,.LM69-__vector_18
+ 590               	.LM69:
+ 591 0224 1192      		st Z+,__zero_reg__
+ 592               		.stabn 68,0,95,.LM70-__vector_18
+ 593               	.LM70:
+ 594 0226 0196      		adiw r24,1
+ 595 0228 8217      		cp r24,r18
+ 596 022a 9307      		cpc r25,r19
+ 597 022c D8F3      		brlo .L43
+ 598 022e 62C0      		rjmp .L71
+ 599               	.L29:
+  98:DME_2012D.c   **** 		}
+  99:DME_2012D.c   **** 
+ 100:DME_2012D.c   **** 		Serial_Count0=0;
+ 101:DME_2012D.c   **** 		Serial_Time_Count0=0;
+ 102:DME_2012D.c   **** 
+ 103:DME_2012D.c   **** 
+ 104:DME_2012D.c   **** 	}else if((RXD_BUF0[2] == 0x00) && (RXD_BUF0[3] == 0x02)  && (Serial_Count0 == 8)){
+ 600               		.stabn 68,0,104,.LM71-__vector_18
+ 601               	.LM71:
+ 602 0230 CC23      		tst r28
+ 603 0232 09F0      		breq .+2
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 15
+
+
+ 604 0234 3EC0      		rjmp .L45
+ 605 0236 0091 0000 		lds r16,RXD_BUF0+3
+ 606 023a 0230      		cpi r16,lo8(2)
+ 607 023c D1F5      		brne .L45
+ 608 023e 8091 0000 		lds r24,Serial_Count0
+ 609 0242 9091 0000 		lds r25,(Serial_Count0)+1
+ 610 0246 0897      		sbiw r24,8
+ 611 0248 A1F5      		brne .L45
+ 105:DME_2012D.c   **** 
+ 106:DME_2012D.c   **** 		// LOS Status Data
+ 107:DME_2012D.c   **** 		READY_FLAG =1;
+ 612               		.stabn 68,0,107,.LM72-__vector_18
+ 613               	.LM72:
+ 614 024a 11E0      		ldi r17,lo8(1)
+ 615 024c 1093 0000 		sts READY_FLAG,r17
+ 108:DME_2012D.c   **** 		
+ 109:DME_2012D.c   **** 		TX0_char(0x1B);TX0_char(0x02);TX0_char(0x00);TX0_char(0x12);TX0_char(0x00);TX0_char(0x01);TX0_cha
+ 616               		.stabn 68,0,109,.LM73-__vector_18
+ 617               	.LM73:
+ 618 0250 8BE1      		ldi r24,lo8(27)
+ 619 0252 0E94 0000 		call TX0_char
+ 620 0256 802F      		mov r24,r16
+ 621 0258 0E94 0000 		call TX0_char
+ 622 025c 8C2F      		mov r24,r28
+ 623 025e 0E94 0000 		call TX0_char
+ 624 0262 82E1      		ldi r24,lo8(18)
+ 625 0264 0E94 0000 		call TX0_char
+ 626 0268 8C2F      		mov r24,r28
+ 627 026a 0E94 0000 		call TX0_char
+ 628 026e 812F      		mov r24,r17
+ 629 0270 0E94 0000 		call TX0_char
+ 630 0274 8091 0000 		lds r24,ETI_LOS_BUF0
+ 631 0278 0E94 0000 		call TX0_char
+ 632 027c 8BE1      		ldi r24,lo8(27)
+ 633 027e 0E94 0000 		call TX0_char
+ 634 0282 83E0      		ldi r24,lo8(3)
+ 635 0284 0E94 0000 		call TX0_char
+ 110:DME_2012D.c   **** 
+ 111:DME_2012D.c   **** 		for(Buf_Count0=0;Buf_Count0<Serial_Count0;Buf_Count0++)
+ 636               		.stabn 68,0,111,.LM74-__vector_18
+ 637               	.LM74:
+ 638 0288 1092 0000 		sts (Buf_Count0)+1,__zero_reg__
+ 639 028c 1092 0000 		sts Buf_Count0,__zero_reg__
+ 640 0290 80E0      		ldi r24,lo8(0)
+ 641 0292 90E0      		ldi r25,hi8(0)
+ 642 0294 2091 0000 		lds r18,Serial_Count0
+ 643 0298 3091 0000 		lds r19,(Serial_Count0)+1
+ 644 029c 8217      		cp r24,r18
+ 645 029e 9307      		cpc r25,r19
+ 646 02a0 68F5      		brsh .L70
+ 647 02a2 E0E0      		ldi r30,lo8(RXD_BUF0)
+ 648 02a4 F0E0      		ldi r31,hi8(RXD_BUF0)
+ 649               	.L50:
+ 112:DME_2012D.c   **** 		{
+ 113:DME_2012D.c   **** 			RXD_BUF0[Buf_Count0]=0x00;
+ 650               		.stabn 68,0,113,.LM75-__vector_18
+ 651               	.LM75:
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 16
+
+
+ 652 02a6 1192      		st Z+,__zero_reg__
+ 653               		.stabn 68,0,111,.LM76-__vector_18
+ 654               	.LM76:
+ 655 02a8 0196      		adiw r24,1
+ 656 02aa 8217      		cp r24,r18
+ 657 02ac 9307      		cpc r25,r19
+ 658 02ae D8F3      		brlo .L50
+ 659 02b0 21C0      		rjmp .L71
+ 660               	.L45:
+ 114:DME_2012D.c   **** 		}
+ 115:DME_2012D.c   **** 
+ 116:DME_2012D.c   **** 		Serial_Count0=0;
+ 117:DME_2012D.c   **** 		Serial_Time_Count0=0;
+ 118:DME_2012D.c   **** 
+ 119:DME_2012D.c   **** 	}else if((RXD_BUF0[2] == 0x00) && (RXD_BUF0[3] == 0x03)  && (Serial_Count0 == 9)){
+ 661               		.stabn 68,0,119,.LM77-__vector_18
+ 662               	.LM77:
+ 663 02b2 CC23      		tst r28
+ 664 02b4 59F5      		brne .L44
+ 665 02b6 8091 0000 		lds r24,RXD_BUF0+3
+ 666 02ba 8330      		cpi r24,lo8(3)
+ 667 02bc 39F5      		brne .L44
+ 668 02be 2091 0000 		lds r18,Serial_Count0
+ 669 02c2 3091 0000 		lds r19,(Serial_Count0)+1
+ 670 02c6 2930      		cpi r18,9
+ 671 02c8 3105      		cpc r19,__zero_reg__
+ 672 02ca 01F5      		brne .L44
+ 120:DME_2012D.c   **** 
+ 121:DME_2012D.c   **** 		AUDIO_MUTE_A = RXD_BUF0[6];
+ 673               		.stabn 68,0,121,.LM78-__vector_18
+ 674               	.LM78:
+ 675 02cc 8091 0000 		lds r24,RXD_BUF0+6
+ 676 02d0 8093 0000 		sts AUDIO_MUTE_A,r24
+ 122:DME_2012D.c   **** 		
+ 123:DME_2012D.c   **** 		if(AUDIO_MUTE_A == 0){ sbi(PORTD,6);	}
+ 677               		.stabn 68,0,123,.LM79-__vector_18
+ 678               	.LM79:
+ 679 02d4 8823      		tst r24
+ 680 02d6 09F4      		brne .L53
+ 681 02d8 969A      		sbi 50-0x20,6
+ 682               	.L53:
+ 124:DME_2012D.c   **** 			
+ 125:DME_2012D.c   **** 			
+ 126:DME_2012D.c   **** 		
+ 127:DME_2012D.c   **** 		for(Buf_Count0=0;Buf_Count0<Serial_Count0;Buf_Count0++)
+ 683               		.stabn 68,0,127,.LM80-__vector_18
+ 684               	.LM80:
+ 685 02da 1092 0000 		sts (Buf_Count0)+1,__zero_reg__
+ 686 02de 1092 0000 		sts Buf_Count0,__zero_reg__
+ 687 02e2 80E0      		ldi r24,lo8(0)
+ 688 02e4 90E0      		ldi r25,hi8(0)
+ 689 02e6 E0E0      		ldi r30,lo8(RXD_BUF0)
+ 690 02e8 F0E0      		ldi r31,hi8(RXD_BUF0)
+ 691               	.L58:
+ 128:DME_2012D.c   **** 		{
+ 129:DME_2012D.c   **** 			RXD_BUF0[Buf_Count0]=0x00;
+ 692               		.stabn 68,0,129,.LM81-__vector_18
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 17
+
+
+ 693               	.LM81:
+ 694 02ea 1192      		st Z+,__zero_reg__
+ 695               		.stabn 68,0,127,.LM82-__vector_18
+ 696               	.LM82:
+ 697 02ec 0196      		adiw r24,1
+ 698 02ee 8217      		cp r24,r18
+ 699 02f0 9307      		cpc r25,r19
+ 700 02f2 D8F3      		brlo .L58
+ 701               	.L71:
+ 702 02f4 9093 0000 		sts (Buf_Count0)+1,r25
+ 703 02f8 8093 0000 		sts Buf_Count0,r24
+ 704               	.L70:
+ 130:DME_2012D.c   **** 		}
+ 131:DME_2012D.c   **** 
+ 132:DME_2012D.c   **** 		Serial_Count0=0;
+ 705               		.stabn 68,0,132,.LM83-__vector_18
+ 706               	.LM83:
+ 707 02fc 1092 0000 		sts (Serial_Count0)+1,__zero_reg__
+ 708 0300 1092 0000 		sts Serial_Count0,__zero_reg__
+ 133:DME_2012D.c   **** 		Serial_Time_Count0=0;
+ 709               		.stabn 68,0,133,.LM84-__vector_18
+ 710               	.LM84:
+ 711 0304 1092 0000 		sts (Serial_Time_Count0)+1,__zero_reg__
+ 712 0308 1092 0000 		sts Serial_Time_Count0,__zero_reg__
+ 713               	.L44:
+ 134:DME_2012D.c   **** 
+ 135:DME_2012D.c   **** 	}
+ 136:DME_2012D.c   **** 	
+ 137:DME_2012D.c   **** 
+ 138:DME_2012D.c   **** 	if((RXD_BUF0[0] != 0x1B) && (RXD_BUF0[1] != 0x02))
+ 714               		.stabn 68,0,138,.LM85-__vector_18
+ 715               	.LM85:
+ 716 030c 8091 0000 		lds r24,RXD_BUF0
+ 717 0310 8B31      		cpi r24,lo8(27)
+ 718 0312 61F0      		breq .L59
+ 719 0314 8091 0000 		lds r24,RXD_BUF0+1
+ 720 0318 8230      		cpi r24,lo8(2)
+ 721 031a 41F0      		breq .L59
+ 139:DME_2012D.c   **** 	{
+ 140:DME_2012D.c   **** 		Serial_Count0=0;
+ 722               		.stabn 68,0,140,.LM86-__vector_18
+ 723               	.LM86:
+ 724 031c 1092 0000 		sts (Serial_Count0)+1,__zero_reg__
+ 725 0320 1092 0000 		sts Serial_Count0,__zero_reg__
+ 141:DME_2012D.c   **** 		Serial_Time_Count0=0;
+ 726               		.stabn 68,0,141,.LM87-__vector_18
+ 727               	.LM87:
+ 728 0324 1092 0000 		sts (Serial_Time_Count0)+1,__zero_reg__
+ 729 0328 1092 0000 		sts Serial_Time_Count0,__zero_reg__
+ 730               	.L59:
+ 142:DME_2012D.c   **** 	}
+ 143:DME_2012D.c   ****  
+ 144:DME_2012D.c   ****   sei();
+ 731               		.stabn 68,0,144,.LM88-__vector_18
+ 732               	.LM88:
+ 733               	/* #APP */
+ 734 032c 7894      		sei
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 18
+
+
+ 145:DME_2012D.c   **** 
+ 146:DME_2012D.c   **** }	// end of SIGNAL(SIG_UART0_RECV)
+ 735               		.stabn 68,0,146,.LM89-__vector_18
+ 736               	.LM89:
+ 737               	/* #NOAPP */
+ 738               	/* epilogue: frame size=0 */
+ 739 032e FF91      		pop r31
+ 740 0330 EF91      		pop r30
+ 741 0332 CF91      		pop r28
+ 742 0334 BF91      		pop r27
+ 743 0336 AF91      		pop r26
+ 744 0338 9F91      		pop r25
+ 745 033a 8F91      		pop r24
+ 746 033c 7F91      		pop r23
+ 747 033e 6F91      		pop r22
+ 748 0340 5F91      		pop r21
+ 749 0342 4F91      		pop r20
+ 750 0344 3F91      		pop r19
+ 751 0346 2F91      		pop r18
+ 752 0348 1F91      		pop r17
+ 753 034a 0F91      		pop r16
+ 754 034c 0F90      		pop __tmp_reg__
+ 755 034e 0FBE      		out __SREG__,__tmp_reg__
+ 756 0350 0F90      		pop __tmp_reg__
+ 757 0352 1F90      		pop __zero_reg__
+ 758 0354 1895      		reti
+ 759               	/* epilogue end (size=20) */
+ 760               	/* function __vector_18 size 346 (306) */
+ 761               		.size	__vector_18, .-__vector_18
+ 762               	.Lscope7:
+ 763               		.stabs	"",36,0,0,.Lscope7-__vector_18
+ 764               		.stabs	"__vector_30:F(0,20)",36,0,151,__vector_30
+ 765               	.global	__vector_30
+ 766               		.type	__vector_30, @function
+ 767               	__vector_30:
+ 147:DME_2012D.c   **** 
+ 148:DME_2012D.c   **** 
+ 149:DME_2012D.c   **** 
+ 150:DME_2012D.c   **** SIGNAL(SIG_UART1_RECV)
+ 151:DME_2012D.c   **** {
+ 768               		.stabn 68,0,151,.LM90-__vector_30
+ 769               	.LM90:
+ 770               	/* prologue: frame size=0 */
+ 771 0356 1F92      		push __zero_reg__
+ 772 0358 0F92      		push __tmp_reg__
+ 773 035a 0FB6      		in __tmp_reg__,__SREG__
+ 774 035c 0F92      		push __tmp_reg__
+ 775 035e 1124      		clr __zero_reg__
+ 776 0360 0F93      		push r16
+ 777 0362 1F93      		push r17
+ 778 0364 2F93      		push r18
+ 779 0366 3F93      		push r19
+ 780 0368 4F93      		push r20
+ 781 036a 5F93      		push r21
+ 782 036c 6F93      		push r22
+ 783 036e 7F93      		push r23
+ 784 0370 8F93      		push r24
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 19
+
+
+ 785 0372 9F93      		push r25
+ 786 0374 AF93      		push r26
+ 787 0376 BF93      		push r27
+ 788 0378 CF93      		push r28
+ 789 037a EF93      		push r30
+ 790 037c FF93      		push r31
+ 791               	/* prologue end (size=20) */
+ 152:DME_2012D.c   ****   cli();
+ 792               		.stabn 68,0,152,.LM91-__vector_30
+ 793               	.LM91:
+ 794               	/* #APP */
+ 795 037e F894      		cli
+ 153:DME_2012D.c   **** 	RXD_BUF1[Serial_Count1]=UDR1;
+ 796               		.stabn 68,0,153,.LM92-__vector_30
+ 797               	.LM92:
+ 798               	/* #NOAPP */
+ 799 0380 8091 0000 		lds r24,Serial_Count1
+ 800 0384 9091 0000 		lds r25,(Serial_Count1)+1
+ 801 0388 FC01      		movw r30,r24
+ 802 038a E050      		subi r30,lo8(-(RXD_BUF1))
+ 803 038c F040      		sbci r31,hi8(-(RXD_BUF1))
+ 804 038e 2091 9C00 		lds r18,156
+ 805 0392 2083      		st Z,r18
+ 154:DME_2012D.c   **** 	
+ 155:DME_2012D.c   **** 	Serial_Count1++;
+ 806               		.stabn 68,0,155,.LM93-__vector_30
+ 807               	.LM93:
+ 808 0394 9C01      		movw r18,r24
+ 809 0396 2F5F      		subi r18,lo8(-(1))
+ 810 0398 3F4F      		sbci r19,hi8(-(1))
+ 811 039a 3093 0000 		sts (Serial_Count1)+1,r19
+ 812 039e 2093 0000 		sts Serial_Count1,r18
+ 156:DME_2012D.c   **** 
+ 157:DME_2012D.c   **** 	if((RXD_BUF1[2] == 0x00) && (RXD_BUF1[3] == 0x01)  && (Serial_Count1 == 13)){
+ 813               		.stabn 68,0,157,.LM94-__vector_30
+ 814               	.LM94:
+ 815 03a2 C091 0000 		lds r28,RXD_BUF1+2
+ 816 03a6 CC23      		tst r28
+ 817 03a8 09F0      		breq .+2
+ 818 03aa 9BC0      		rjmp .L73
+ 819 03ac 8091 0000 		lds r24,RXD_BUF1+3
+ 820 03b0 8130      		cpi r24,lo8(1)
+ 821 03b2 09F0      		breq .+2
+ 822 03b4 96C0      		rjmp .L73
+ 823 03b6 2D30      		cpi r18,13
+ 824 03b8 3105      		cpc r19,__zero_reg__
+ 825 03ba 09F0      		breq .+2
+ 826 03bc 92C0      		rjmp .L73
+ 158:DME_2012D.c   **** 
+ 159:DME_2012D.c   **** 		// Led Status Data
+ 160:DME_2012D.c   **** 		INPUT_TYPE_B = RXD_BUF1[6];
+ 827               		.stabn 68,0,160,.LM95-__vector_30
+ 828               	.LM95:
+ 829 03be 9091 0000 		lds r25,RXD_BUF1+6
+ 830 03c2 9093 0000 		sts INPUT_TYPE_B,r25
+ 161:DME_2012D.c   **** 		E_SYNC_B = RXD_BUF1[7];
+ 831               		.stabn 68,0,161,.LM96-__vector_30
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 20
+
+
+ 832               	.LM96:
+ 833 03c6 8091 0000 		lds r24,RXD_BUF1+7
+ 834 03ca 8093 0000 		sts E_SYNC_B,r24
+ 162:DME_2012D.c   **** 		E_FCNT_B = RXD_BUF1[8];
+ 835               		.stabn 68,0,162,.LM97-__vector_30
+ 836               	.LM97:
+ 837 03ce 8091 0000 		lds r24,RXD_BUF1+8
+ 838 03d2 8093 0000 		sts E_FCNT_B,r24
+ 163:DME_2012D.c   **** 		E_FCRC_B = RXD_BUF1[9];
+ 839               		.stabn 68,0,163,.LM98-__vector_30
+ 840               	.LM98:
+ 841 03d6 8091 0000 		lds r24,RXD_BUF1+9
+ 842 03da 8093 0000 		sts E_FCRC_B,r24
+ 164:DME_2012D.c   **** 		E_HCRC_B = RXD_BUF1[10];
+ 843               		.stabn 68,0,164,.LM99-__vector_30
+ 844               	.LM99:
+ 845 03de 8091 0000 		lds r24,RXD_BUF1+10
+ 846 03e2 8093 0000 		sts E_HCRC_B,r24
+ 165:DME_2012D.c   **** 		
+ 166:DME_2012D.c   **** 		if(INPUT_TYPE_B == 0)
+ 847               		.stabn 68,0,166,.LM100-__vector_30
+ 848               	.LM100:
+ 849 03e6 9923      		tst r25
+ 850 03e8 19F4      		brne .L74
+ 167:DME_2012D.c   **** 		{
+ 168:DME_2012D.c   **** 			//sbi(PORTF,5);cbi(PORTF,6);cbi(PORTF,7);// NI
+ 169:DME_2012D.c   **** 			sbi(PORTA,6);cbi(PORTA,5);cbi(PORTA,4);// NI
+ 851               		.stabn 68,0,169,.LM101-__vector_30
+ 852               	.LM101:
+ 853 03ea DE9A      		sbi 59-0x20,6
+ 854 03ec DD98      		cbi 59-0x20,5
+ 855 03ee 04C0      		rjmp .L113
+ 856               	.L74:
+ 170:DME_2012D.c   **** 		
+ 171:DME_2012D.c   **** 		}else if(INPUT_TYPE_B == 1){
+ 857               		.stabn 68,0,171,.LM102-__vector_30
+ 858               	.LM102:
+ 859 03f0 9130      		cpi r25,lo8(1)
+ 860 03f2 21F4      		brne .L76
+ 172:DME_2012D.c   **** 			
+ 173:DME_2012D.c   **** 			//cbi(PORTF,5);sbi(PORTF,6);cbi(PORTF,7);// NA 5376
+ 174:DME_2012D.c   **** 			cbi(PORTA,6);sbi(PORTA,5);cbi(PORTA,4);// NA 5376
+ 861               		.stabn 68,0,174,.LM103-__vector_30
+ 862               	.LM103:
+ 863 03f4 DE98      		cbi 59-0x20,6
+ 864 03f6 DD9A      		sbi 59-0x20,5
+ 865               	.L113:
+ 866 03f8 DC98      		cbi 59-0x20,4
+ 867 03fa 05C0      		rjmp .L75
+ 868               	.L76:
+ 175:DME_2012D.c   **** 			
+ 176:DME_2012D.c   **** 		}else if(INPUT_TYPE_B == 2){
+ 869               		.stabn 68,0,176,.LM104-__vector_30
+ 870               	.LM104:
+ 871 03fc 9230      		cpi r25,lo8(2)
+ 872 03fe 19F4      		brne .L75
+ 177:DME_2012D.c   **** 			
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 21
+
+
+ 178:DME_2012D.c   **** 			//cbi(PORTF,5);cbi(PORTF,6);sbi(PORTF,7);// NA 5592
+ 179:DME_2012D.c   **** 			cbi(PORTA,6);cbi(PORTA,5);sbi(PORTA,4);// NA 5592
+ 873               		.stabn 68,0,179,.LM105-__vector_30
+ 874               	.LM105:
+ 875 0400 DE98      		cbi 59-0x20,6
+ 876 0402 DD98      		cbi 59-0x20,5
+ 877 0404 DC9A      		sbi 59-0x20,4
+ 878               	.L75:
+ 180:DME_2012D.c   **** 		}
+ 181:DME_2012D.c   **** 
+ 182:DME_2012D.c   **** 		if(E_SYNC_B == 1){	sbi(PORTA,1);sbi(PORTA,0);LED_TIME_Count=0;Log_LED_Clear_Time_Count=0;	}
+ 879               		.stabn 68,0,182,.LM106-__vector_30
+ 880               	.LM106:
+ 881 0406 8091 0000 		lds r24,E_SYNC_B
+ 882 040a 8130      		cpi r24,lo8(1)
+ 883 040c 61F4      		brne .L79
+ 884 040e D99A      		sbi 59-0x20,1
+ 885 0410 D89A      		sbi 59-0x20,0
+ 886 0412 1092 0000 		sts LED_TIME_Count,__zero_reg__
+ 887 0416 1092 0000 		sts Log_LED_Clear_Time_Count,__zero_reg__
+ 888 041a 1092 0000 		sts (Log_LED_Clear_Time_Count)+1,__zero_reg__
+ 889 041e 1092 0000 		sts (Log_LED_Clear_Time_Count)+2,__zero_reg__
+ 890 0422 1092 0000 		sts (Log_LED_Clear_Time_Count)+3,__zero_reg__
+ 891               	.L79:
+ 183:DME_2012D.c   **** 		if(E_FCNT_B == 1){	sbi(PORTF,5);sbi(PORTF,4);LED_TIME_Count=0;Log_LED_Clear_Time_Count=0;	}
+ 892               		.stabn 68,0,183,.LM107-__vector_30
+ 893               	.LM107:
+ 894 0426 8091 0000 		lds r24,E_FCNT_B
+ 895 042a 8130      		cpi r24,lo8(1)
+ 896 042c A1F4      		brne .L80
+ 897 042e 8091 6200 		lds r24,98
+ 898 0432 8062      		ori r24,lo8(32)
+ 899 0434 8093 6200 		sts 98,r24
+ 900 0438 8091 6200 		lds r24,98
+ 901 043c 8061      		ori r24,lo8(16)
+ 902 043e 8093 6200 		sts 98,r24
+ 903 0442 1092 0000 		sts LED_TIME_Count,__zero_reg__
+ 904 0446 1092 0000 		sts Log_LED_Clear_Time_Count,__zero_reg__
+ 905 044a 1092 0000 		sts (Log_LED_Clear_Time_Count)+1,__zero_reg__
+ 906 044e 1092 0000 		sts (Log_LED_Clear_Time_Count)+2,__zero_reg__
+ 907 0452 1092 0000 		sts (Log_LED_Clear_Time_Count)+3,__zero_reg__
+ 908               	.L80:
+ 184:DME_2012D.c   **** 		if(E_FCRC_B == 1){	sbi(PORTF,3);sbi(PORTF,2);LED_TIME_Count=0;Log_LED_Clear_Time_Count=0;	} 
+ 909               		.stabn 68,0,184,.LM108-__vector_30
+ 910               	.LM108:
+ 911 0456 8091 0000 		lds r24,E_FCRC_B
+ 912 045a 8130      		cpi r24,lo8(1)
+ 913 045c A1F4      		brne .L81
+ 914 045e 8091 6200 		lds r24,98
+ 915 0462 8860      		ori r24,lo8(8)
+ 916 0464 8093 6200 		sts 98,r24
+ 917 0468 8091 6200 		lds r24,98
+ 918 046c 8460      		ori r24,lo8(4)
+ 919 046e 8093 6200 		sts 98,r24
+ 920 0472 1092 0000 		sts LED_TIME_Count,__zero_reg__
+ 921 0476 1092 0000 		sts Log_LED_Clear_Time_Count,__zero_reg__
+ 922 047a 1092 0000 		sts (Log_LED_Clear_Time_Count)+1,__zero_reg__
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 22
+
+
+ 923 047e 1092 0000 		sts (Log_LED_Clear_Time_Count)+2,__zero_reg__
+ 924 0482 1092 0000 		sts (Log_LED_Clear_Time_Count)+3,__zero_reg__
+ 925               	.L81:
+ 185:DME_2012D.c   **** 		if(E_HCRC_B == 1){	sbi(PORTF,1);sbi(PORTF,0);LED_TIME_Count=0;Log_LED_Clear_Time_Count=0;	}
+ 926               		.stabn 68,0,185,.LM109-__vector_30
+ 927               	.LM109:
+ 928 0486 8091 0000 		lds r24,E_HCRC_B
+ 929 048a 8130      		cpi r24,lo8(1)
+ 930 048c A1F4      		brne .L82
+ 931 048e 8091 6200 		lds r24,98
+ 932 0492 8260      		ori r24,lo8(2)
+ 933 0494 8093 6200 		sts 98,r24
+ 934 0498 8091 6200 		lds r24,98
+ 935 049c 8160      		ori r24,lo8(1)
+ 936 049e 8093 6200 		sts 98,r24
+ 937 04a2 1092 0000 		sts LED_TIME_Count,__zero_reg__
+ 938 04a6 1092 0000 		sts Log_LED_Clear_Time_Count,__zero_reg__
+ 939 04aa 1092 0000 		sts (Log_LED_Clear_Time_Count)+1,__zero_reg__
+ 940 04ae 1092 0000 		sts (Log_LED_Clear_Time_Count)+2,__zero_reg__
+ 941 04b2 1092 0000 		sts (Log_LED_Clear_Time_Count)+3,__zero_reg__
+ 942               	.L82:
+ 186:DME_2012D.c   **** 
+ 187:DME_2012D.c   **** 
+ 188:DME_2012D.c   **** 		for(Buf_Count1=0;Buf_Count1<Serial_Count1;Buf_Count1++)
+ 943               		.stabn 68,0,188,.LM110-__vector_30
+ 944               	.LM110:
+ 945 04b6 1092 0000 		sts (Buf_Count1)+1,__zero_reg__
+ 946 04ba 1092 0000 		sts Buf_Count1,__zero_reg__
+ 947 04be 80E0      		ldi r24,lo8(0)
+ 948 04c0 90E0      		ldi r25,hi8(0)
+ 949 04c2 2091 0000 		lds r18,Serial_Count1
+ 950 04c6 3091 0000 		lds r19,(Serial_Count1)+1
+ 951 04ca 8217      		cp r24,r18
+ 952 04cc 9307      		cpc r25,r19
+ 953 04ce 08F0      		brlo .+2
+ 954 04d0 6EC0      		rjmp .L114
+ 955 04d2 E0E0      		ldi r30,lo8(RXD_BUF1)
+ 956 04d4 F0E0      		ldi r31,hi8(RXD_BUF1)
+ 957               	.L87:
+ 189:DME_2012D.c   **** 		{
+ 190:DME_2012D.c   **** 			RXD_BUF1[Buf_Count1]=0x00;
+ 958               		.stabn 68,0,190,.LM111-__vector_30
+ 959               	.LM111:
+ 960 04d6 1192      		st Z+,__zero_reg__
+ 961               		.stabn 68,0,188,.LM112-__vector_30
+ 962               	.LM112:
+ 963 04d8 0196      		adiw r24,1
+ 964 04da 8217      		cp r24,r18
+ 965 04dc 9307      		cpc r25,r19
+ 966 04de D8F3      		brlo .L87
+ 967 04e0 62C0      		rjmp .L115
+ 968               	.L73:
+ 191:DME_2012D.c   **** 		}
+ 192:DME_2012D.c   **** 
+ 193:DME_2012D.c   **** 		Serial_Count1=0;
+ 194:DME_2012D.c   **** 		Serial_Time_Count1=0;
+ 195:DME_2012D.c   **** 
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 23
+
+
+ 196:DME_2012D.c   **** 
+ 197:DME_2012D.c   **** 	}else if((RXD_BUF1[2] == 0x00) && (RXD_BUF1[3] == 0x02)  && (Serial_Count1 == 8)){
+ 969               		.stabn 68,0,197,.LM113-__vector_30
+ 970               	.LM113:
+ 971 04e2 CC23      		tst r28
+ 972 04e4 09F0      		breq .+2
+ 973 04e6 3EC0      		rjmp .L89
+ 974 04e8 0091 0000 		lds r16,RXD_BUF1+3
+ 975 04ec 0230      		cpi r16,lo8(2)
+ 976 04ee D1F5      		brne .L89
+ 977 04f0 8091 0000 		lds r24,Serial_Count1
+ 978 04f4 9091 0000 		lds r25,(Serial_Count1)+1
+ 979 04f8 0897      		sbiw r24,8
+ 980 04fa A1F5      		brne .L89
+ 198:DME_2012D.c   **** 
+ 199:DME_2012D.c   **** 		// LOS Status Data
+ 200:DME_2012D.c   **** 		READY_FLAG =1;
+ 981               		.stabn 68,0,200,.LM114-__vector_30
+ 982               	.LM114:
+ 983 04fc 11E0      		ldi r17,lo8(1)
+ 984 04fe 1093 0000 		sts READY_FLAG,r17
+ 201:DME_2012D.c   **** 		
+ 202:DME_2012D.c   **** 		TX1_char(0x1B);TX1_char(0x02);TX1_char(0x00);TX1_char(0x12);TX1_char(0x00);TX1_char(0x01);TX1_cha
+ 985               		.stabn 68,0,202,.LM115-__vector_30
+ 986               	.LM115:
+ 987 0502 8BE1      		ldi r24,lo8(27)
+ 988 0504 0E94 0000 		call TX1_char
+ 989 0508 802F      		mov r24,r16
+ 990 050a 0E94 0000 		call TX1_char
+ 991 050e 8C2F      		mov r24,r28
+ 992 0510 0E94 0000 		call TX1_char
+ 993 0514 82E1      		ldi r24,lo8(18)
+ 994 0516 0E94 0000 		call TX1_char
+ 995 051a 8C2F      		mov r24,r28
+ 996 051c 0E94 0000 		call TX1_char
+ 997 0520 812F      		mov r24,r17
+ 998 0522 0E94 0000 		call TX1_char
+ 999 0526 8091 0000 		lds r24,ETI_LOS_BUF1
+ 1000 052a 0E94 0000 		call TX1_char
+ 1001 052e 8BE1      		ldi r24,lo8(27)
+ 1002 0530 0E94 0000 		call TX1_char
+ 1003 0534 83E0      		ldi r24,lo8(3)
+ 1004 0536 0E94 0000 		call TX1_char
+ 203:DME_2012D.c   **** 
+ 204:DME_2012D.c   **** 		for(Buf_Count1=0;Buf_Count1<Serial_Count1;Buf_Count1++)
+ 1005               		.stabn 68,0,204,.LM116-__vector_30
+ 1006               	.LM116:
+ 1007 053a 1092 0000 		sts (Buf_Count1)+1,__zero_reg__
+ 1008 053e 1092 0000 		sts Buf_Count1,__zero_reg__
+ 1009 0542 80E0      		ldi r24,lo8(0)
+ 1010 0544 90E0      		ldi r25,hi8(0)
+ 1011 0546 2091 0000 		lds r18,Serial_Count1
+ 1012 054a 3091 0000 		lds r19,(Serial_Count1)+1
+ 1013 054e 8217      		cp r24,r18
+ 1014 0550 9307      		cpc r25,r19
+ 1015 0552 68F5      		brsh .L114
+ 1016 0554 E0E0      		ldi r30,lo8(RXD_BUF1)
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 24
+
+
+ 1017 0556 F0E0      		ldi r31,hi8(RXD_BUF1)
+ 1018               	.L94:
+ 205:DME_2012D.c   **** 		{
+ 206:DME_2012D.c   **** 			RXD_BUF1[Buf_Count1]=0x00;
+ 1019               		.stabn 68,0,206,.LM117-__vector_30
+ 1020               	.LM117:
+ 1021 0558 1192      		st Z+,__zero_reg__
+ 1022               		.stabn 68,0,204,.LM118-__vector_30
+ 1023               	.LM118:
+ 1024 055a 0196      		adiw r24,1
+ 1025 055c 8217      		cp r24,r18
+ 1026 055e 9307      		cpc r25,r19
+ 1027 0560 D8F3      		brlo .L94
+ 1028 0562 21C0      		rjmp .L115
+ 1029               	.L89:
+ 207:DME_2012D.c   **** 		}
+ 208:DME_2012D.c   **** 
+ 209:DME_2012D.c   **** 		Serial_Count1=0;
+ 210:DME_2012D.c   **** 		Serial_Time_Count1=0;
+ 211:DME_2012D.c   **** 
+ 212:DME_2012D.c   **** 	}else if((RXD_BUF1[2] == 0x00) && (RXD_BUF1[3] == 0x03)  && (Serial_Count1 == 9)){
+ 1030               		.stabn 68,0,212,.LM119-__vector_30
+ 1031               	.LM119:
+ 1032 0564 CC23      		tst r28
+ 1033 0566 59F5      		brne .L88
+ 1034 0568 8091 0000 		lds r24,RXD_BUF1+3
+ 1035 056c 8330      		cpi r24,lo8(3)
+ 1036 056e 39F5      		brne .L88
+ 1037 0570 2091 0000 		lds r18,Serial_Count1
+ 1038 0574 3091 0000 		lds r19,(Serial_Count1)+1
+ 1039 0578 2930      		cpi r18,9
+ 1040 057a 3105      		cpc r19,__zero_reg__
+ 1041 057c 01F5      		brne .L88
+ 213:DME_2012D.c   **** 
+ 214:DME_2012D.c   **** 		AUDIO_MUTE_A = RXD_BUF1[6];
+ 1042               		.stabn 68,0,214,.LM120-__vector_30
+ 1043               	.LM120:
+ 1044 057e 8091 0000 		lds r24,RXD_BUF1+6
+ 1045 0582 8093 0000 		sts AUDIO_MUTE_A,r24
+ 215:DME_2012D.c   **** 		
+ 216:DME_2012D.c   **** 		if(AUDIO_MUTE_A == 0){ sbi(PORTD,6);	}
+ 1046               		.stabn 68,0,216,.LM121-__vector_30
+ 1047               	.LM121:
+ 1048 0586 8823      		tst r24
+ 1049 0588 09F4      		brne .L97
+ 1050 058a 969A      		sbi 50-0x20,6
+ 1051               	.L97:
+ 217:DME_2012D.c   **** 			
+ 218:DME_2012D.c   **** 			
+ 219:DME_2012D.c   **** 		
+ 220:DME_2012D.c   **** 		for(Buf_Count1=0;Buf_Count1<Serial_Count1;Buf_Count1++)
+ 1052               		.stabn 68,0,220,.LM122-__vector_30
+ 1053               	.LM122:
+ 1054 058c 1092 0000 		sts (Buf_Count1)+1,__zero_reg__
+ 1055 0590 1092 0000 		sts Buf_Count1,__zero_reg__
+ 1056 0594 80E0      		ldi r24,lo8(0)
+ 1057 0596 90E0      		ldi r25,hi8(0)
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 25
+
+
+ 1058 0598 E0E0      		ldi r30,lo8(RXD_BUF1)
+ 1059 059a F0E0      		ldi r31,hi8(RXD_BUF1)
+ 1060               	.L102:
+ 221:DME_2012D.c   **** 		{
+ 222:DME_2012D.c   **** 			RXD_BUF1[Buf_Count1]=0x00;
+ 1061               		.stabn 68,0,222,.LM123-__vector_30
+ 1062               	.LM123:
+ 1063 059c 1192      		st Z+,__zero_reg__
+ 1064               		.stabn 68,0,220,.LM124-__vector_30
+ 1065               	.LM124:
+ 1066 059e 0196      		adiw r24,1
+ 1067 05a0 8217      		cp r24,r18
+ 1068 05a2 9307      		cpc r25,r19
+ 1069 05a4 D8F3      		brlo .L102
+ 1070               	.L115:
+ 1071 05a6 9093 0000 		sts (Buf_Count1)+1,r25
+ 1072 05aa 8093 0000 		sts Buf_Count1,r24
+ 1073               	.L114:
+ 223:DME_2012D.c   **** 		}
+ 224:DME_2012D.c   **** 
+ 225:DME_2012D.c   **** 		Serial_Count1=0;
+ 1074               		.stabn 68,0,225,.LM125-__vector_30
+ 1075               	.LM125:
+ 1076 05ae 1092 0000 		sts (Serial_Count1)+1,__zero_reg__
+ 1077 05b2 1092 0000 		sts Serial_Count1,__zero_reg__
+ 226:DME_2012D.c   **** 		Serial_Time_Count1=0;
+ 1078               		.stabn 68,0,226,.LM126-__vector_30
+ 1079               	.LM126:
+ 1080 05b6 1092 0000 		sts (Serial_Time_Count1)+1,__zero_reg__
+ 1081 05ba 1092 0000 		sts Serial_Time_Count1,__zero_reg__
+ 1082               	.L88:
+ 227:DME_2012D.c   **** 
+ 228:DME_2012D.c   **** 	}
+ 229:DME_2012D.c   **** 	
+ 230:DME_2012D.c   **** 
+ 231:DME_2012D.c   **** 	if((RXD_BUF1[0] != 0x1B) && (RXD_BUF1[1] != 0x02))
+ 1083               		.stabn 68,0,231,.LM127-__vector_30
+ 1084               	.LM127:
+ 1085 05be 8091 0000 		lds r24,RXD_BUF1
+ 1086 05c2 8B31      		cpi r24,lo8(27)
+ 1087 05c4 61F0      		breq .L103
+ 1088 05c6 8091 0000 		lds r24,RXD_BUF1+1
+ 1089 05ca 8230      		cpi r24,lo8(2)
+ 1090 05cc 41F0      		breq .L103
+ 232:DME_2012D.c   **** 	{
+ 233:DME_2012D.c   **** 		Serial_Count1=0;
+ 1091               		.stabn 68,0,233,.LM128-__vector_30
+ 1092               	.LM128:
+ 1093 05ce 1092 0000 		sts (Serial_Count1)+1,__zero_reg__
+ 1094 05d2 1092 0000 		sts Serial_Count1,__zero_reg__
+ 234:DME_2012D.c   **** 		Serial_Time_Count1=0;
+ 1095               		.stabn 68,0,234,.LM129-__vector_30
+ 1096               	.LM129:
+ 1097 05d6 1092 0000 		sts (Serial_Time_Count1)+1,__zero_reg__
+ 1098 05da 1092 0000 		sts Serial_Time_Count1,__zero_reg__
+ 1099               	.L103:
+ 235:DME_2012D.c   **** 	}
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 26
+
+
+ 236:DME_2012D.c   ****  
+ 237:DME_2012D.c   ****   sei();
+ 1100               		.stabn 68,0,237,.LM130-__vector_30
+ 1101               	.LM130:
+ 1102               	/* #APP */
+ 1103 05de 7894      		sei
+ 238:DME_2012D.c   **** 
+ 239:DME_2012D.c   **** }	// end of SIGNAL(SIG_UART0_RECV)
+ 1104               		.stabn 68,0,239,.LM131-__vector_30
+ 1105               	.LM131:
+ 1106               	/* #NOAPP */
+ 1107               	/* epilogue: frame size=0 */
+ 1108 05e0 FF91      		pop r31
+ 1109 05e2 EF91      		pop r30
+ 1110 05e4 CF91      		pop r28
+ 1111 05e6 BF91      		pop r27
+ 1112 05e8 AF91      		pop r26
+ 1113 05ea 9F91      		pop r25
+ 1114 05ec 8F91      		pop r24
+ 1115 05ee 7F91      		pop r23
+ 1116 05f0 6F91      		pop r22
+ 1117 05f2 5F91      		pop r21
+ 1118 05f4 4F91      		pop r20
+ 1119 05f6 3F91      		pop r19
+ 1120 05f8 2F91      		pop r18
+ 1121 05fa 1F91      		pop r17
+ 1122 05fc 0F91      		pop r16
+ 1123 05fe 0F90      		pop __tmp_reg__
+ 1124 0600 0FBE      		out __SREG__,__tmp_reg__
+ 1125 0602 0F90      		pop __tmp_reg__
+ 1126 0604 1F90      		pop __zero_reg__
+ 1127 0606 1895      		reti
+ 1128               	/* epilogue end (size=20) */
+ 1129               	/* function __vector_30 size 347 (307) */
+ 1130               		.size	__vector_30, .-__vector_30
+ 1131               	.Lscope8:
+ 1132               		.stabs	"",36,0,0,.Lscope8-__vector_30
+ 1133               		.stabs	"__vector_12:F(0,20)",36,0,244,__vector_12
+ 1134               	.global	__vector_12
+ 1135               		.type	__vector_12, @function
+ 1136               	__vector_12:
+ 240:DME_2012D.c   **** 
+ 241:DME_2012D.c   **** 
+ 242:DME_2012D.c   **** 
+ 243:DME_2012D.c   **** SIGNAL(SIG_OUTPUT_COMPARE1A)            //OC1A interrupt function 
+ 244:DME_2012D.c   **** {
+ 1137               		.stabn 68,0,244,.LM132-__vector_12
+ 1138               	.LM132:
+ 1139               	/* prologue: frame size=0 */
+ 1140 0608 1F92      		push __zero_reg__
+ 1141 060a 0F92      		push __tmp_reg__
+ 1142 060c 0FB6      		in __tmp_reg__,__SREG__
+ 1143 060e 0F92      		push __tmp_reg__
+ 1144 0610 1124      		clr __zero_reg__
+ 1145 0612 2F93      		push r18
+ 1146 0614 3F93      		push r19
+ 1147 0616 4F93      		push r20
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 27
+
+
+ 1148 0618 5F93      		push r21
+ 1149 061a 6F93      		push r22
+ 1150 061c 8F93      		push r24
+ 1151 061e 9F93      		push r25
+ 1152 0620 AF93      		push r26
+ 1153 0622 BF93      		push r27
+ 1154 0624 EF93      		push r30
+ 1155 0626 FF93      		push r31
+ 1156               	/* prologue end (size=16) */
+ 245:DME_2012D.c   **** 
+ 246:DME_2012D.c   ****   Time_Flag=1;
+ 1157               		.stabn 68,0,246,.LM133-__vector_12
+ 1158               	.LM133:
+ 1159 0628 81E0      		ldi r24,lo8(1)
+ 1160 062a 90E0      		ldi r25,hi8(1)
+ 1161 062c 9093 0000 		sts (Time_Flag)+1,r25
+ 1162 0630 8093 0000 		sts Time_Flag,r24
+ 247:DME_2012D.c   ****   Time_Count++;
+ 1163               		.stabn 68,0,247,.LM134-__vector_12
+ 1164               	.LM134:
+ 1165 0634 8091 0000 		lds r24,Time_Count
+ 1166 0638 9091 0000 		lds r25,(Time_Count)+1
+ 1167 063c 0196      		adiw r24,1
+ 1168 063e 9093 0000 		sts (Time_Count)+1,r25
+ 1169 0642 8093 0000 		sts Time_Count,r24
+ 248:DME_2012D.c   **** 	Serial_Time_Count0++;
+ 1170               		.stabn 68,0,248,.LM135-__vector_12
+ 1171               	.LM135:
+ 1172 0646 4091 0000 		lds r20,Serial_Time_Count0
+ 1173 064a 5091 0000 		lds r21,(Serial_Time_Count0)+1
+ 1174 064e 4F5F      		subi r20,lo8(-(1))
+ 1175 0650 5F4F      		sbci r21,hi8(-(1))
+ 1176 0652 5093 0000 		sts (Serial_Time_Count0)+1,r21
+ 1177 0656 4093 0000 		sts Serial_Time_Count0,r20
+ 249:DME_2012D.c   **** 	Serial_Time_Count1++;
+ 1178               		.stabn 68,0,249,.LM136-__vector_12
+ 1179               	.LM136:
+ 1180 065a 8091 0000 		lds r24,Serial_Time_Count1
+ 1181 065e 9091 0000 		lds r25,(Serial_Time_Count1)+1
+ 1182 0662 0196      		adiw r24,1
+ 1183 0664 9093 0000 		sts (Serial_Time_Count1)+1,r25
+ 1184 0668 8093 0000 		sts Serial_Time_Count1,r24
+ 250:DME_2012D.c   **** 	LED_TIME_Count++;
+ 1185               		.stabn 68,0,250,.LM137-__vector_12
+ 1186               	.LM137:
+ 1187 066c 2091 0000 		lds r18,LED_TIME_Count
+ 1188 0670 2F5F      		subi r18,lo8(-(1))
+ 1189 0672 2093 0000 		sts LED_TIME_Count,r18
+ 251:DME_2012D.c   **** 	Log_LED_Clear_Time_Count++;
+ 1190               		.stabn 68,0,251,.LM138-__vector_12
+ 1191               	.LM138:
+ 1192 0676 8091 0000 		lds r24,Log_LED_Clear_Time_Count
+ 1193 067a 9091 0000 		lds r25,(Log_LED_Clear_Time_Count)+1
+ 1194 067e A091 0000 		lds r26,(Log_LED_Clear_Time_Count)+2
+ 1195 0682 B091 0000 		lds r27,(Log_LED_Clear_Time_Count)+3
+ 1196 0686 0196      		adiw r24,1
+ 1197 0688 A11D      		adc r26,__zero_reg__
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 28
+
+
+ 1198 068a B11D      		adc r27,__zero_reg__
+ 1199 068c 8093 0000 		sts Log_LED_Clear_Time_Count,r24
+ 1200 0690 9093 0000 		sts (Log_LED_Clear_Time_Count)+1,r25
+ 1201 0694 A093 0000 		sts (Log_LED_Clear_Time_Count)+2,r26
+ 1202 0698 B093 0000 		sts (Log_LED_Clear_Time_Count)+3,r27
+ 252:DME_2012D.c   **** 	
+ 253:DME_2012D.c   **** 	if(LED_TIME_Count == 10)
+ 1203               		.stabn 68,0,253,.LM139-__vector_12
+ 1204               	.LM139:
+ 1205 069c 2A30      		cpi r18,lo8(10)
+ 1206 069e 81F4      		brne .L117
+ 254:DME_2012D.c   **** 	{
+ 255:DME_2012D.c   **** 		//LED OFF
+ 256:DME_2012D.c   **** 		cbi(PORTA,0);
+ 1207               		.stabn 68,0,256,.LM140-__vector_12
+ 1208               	.LM140:
+ 1209 06a0 D898      		cbi 59-0x20,0
+ 257:DME_2012D.c   **** 		cbi(PORTF,0);
+ 1210               		.stabn 68,0,257,.LM141-__vector_12
+ 1211               	.LM141:
+ 1212 06a2 8091 6200 		lds r24,98
+ 1213 06a6 8E7F      		andi r24,lo8(-2)
+ 1214 06a8 8093 6200 		sts 98,r24
+ 258:DME_2012D.c   **** 		cbi(PORTF,2);
+ 1215               		.stabn 68,0,258,.LM142-__vector_12
+ 1216               	.LM142:
+ 1217 06ac 8091 6200 		lds r24,98
+ 1218 06b0 8B7F      		andi r24,lo8(-5)
+ 1219 06b2 8093 6200 		sts 98,r24
+ 259:DME_2012D.c   **** 		cbi(PORTF,4);
+ 1220               		.stabn 68,0,259,.LM143-__vector_12
+ 1221               	.LM143:
+ 1222 06b6 8091 6200 		lds r24,98
+ 1223 06ba 8F7E      		andi r24,lo8(-17)
+ 1224 06bc 8093 6200 		sts 98,r24
+ 1225               	.L117:
+ 260:DME_2012D.c   **** 	}
+ 261:DME_2012D.c   **** 
+ 262:DME_2012D.c   **** 
+ 263:DME_2012D.c   **** 	if(Log_LED_Clear_Time_Count == 72000)// 2 hours
+ 264:DME_2012D.c   **** 	{
+ 265:DME_2012D.c   **** 		//Log LED OFF
+ 266:DME_2012D.c   **** 		//cbi(PORTA,1);
+ 267:DME_2012D.c   **** 		//cbi(PORTF,1);
+ 268:DME_2012D.c   **** 		//cbi(PORTF,3);
+ 269:DME_2012D.c   **** 		//cbi(PORTF,5);
+ 270:DME_2012D.c   **** 	}
+ 271:DME_2012D.c   **** 
+ 272:DME_2012D.c   **** 	if(Serial_Time_Count0 >= 5)
+ 1226               		.stabn 68,0,272,.LM144-__vector_12
+ 1227               	.LM144:
+ 1228 06c0 4530      		cpi r20,5
+ 1229 06c2 5105      		cpc r21,__zero_reg__
+ 1230 06c4 B0F0      		brlo .L119
+ 273:DME_2012D.c   **** 	{
+ 274:DME_2012D.c   **** 			Serial_Count0=0;
+ 1231               		.stabn 68,0,274,.LM145-__vector_12
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 29
+
+
+ 1232               	.LM145:
+ 1233 06c6 1092 0000 		sts (Serial_Count0)+1,__zero_reg__
+ 1234 06ca 1092 0000 		sts Serial_Count0,__zero_reg__
+ 275:DME_2012D.c   **** 			for(Buf_Count0=0;Buf_Count0<30;Buf_Count0++)
+ 1235               		.stabn 68,0,275,.LM146-__vector_12
+ 1236               	.LM146:
+ 1237 06ce 1092 0000 		sts (Buf_Count0)+1,__zero_reg__
+ 1238 06d2 1092 0000 		sts Buf_Count0,__zero_reg__
+ 1239 06d6 E0E0      		ldi r30,lo8(RXD_BUF0)
+ 1240 06d8 F0E0      		ldi r31,hi8(RXD_BUF0)
+ 1241 06da CF01      		movw r24,r30
+ 1242 06dc 4D96      		adiw r24,29
+ 1243               	.L124:
+ 276:DME_2012D.c   **** 			{
+ 277:DME_2012D.c   **** 				RXD_BUF0[Buf_Count0]=0x00;
+ 1244               		.stabn 68,0,277,.LM147-__vector_12
+ 1245               	.LM147:
+ 1246 06de 1192      		st Z+,__zero_reg__
+ 1247               		.stabn 68,0,275,.LM148-__vector_12
+ 1248               	.LM148:
+ 1249 06e0 8E17      		cp r24,r30
+ 1250 06e2 9F07      		cpc r25,r31
+ 1251 06e4 E0F7      		brsh .L124
+ 1252 06e6 8EE1      		ldi r24,lo8(30)
+ 1253 06e8 90E0      		ldi r25,hi8(30)
+ 1254 06ea 9093 0000 		sts (Buf_Count0)+1,r25
+ 1255 06ee 8093 0000 		sts Buf_Count0,r24
+ 1256               	.L119:
+ 278:DME_2012D.c   **** 			}
+ 279:DME_2012D.c   **** 	}
+ 280:DME_2012D.c   **** 
+ 281:DME_2012D.c   **** 	if(Serial_Time_Count1 >= 5)
+ 1257               		.stabn 68,0,281,.LM149-__vector_12
+ 1258               	.LM149:
+ 1259 06f2 2091 0000 		lds r18,Serial_Time_Count1
+ 1260 06f6 3091 0000 		lds r19,(Serial_Time_Count1)+1
+ 1261 06fa 2530      		cpi r18,5
+ 1262 06fc 3105      		cpc r19,__zero_reg__
+ 1263 06fe B0F0      		brlo .L125
+ 282:DME_2012D.c   **** 	{
+ 283:DME_2012D.c   **** 			Serial_Count1=0;
+ 1264               		.stabn 68,0,283,.LM150-__vector_12
+ 1265               	.LM150:
+ 1266 0700 1092 0000 		sts (Serial_Count1)+1,__zero_reg__
+ 1267 0704 1092 0000 		sts Serial_Count1,__zero_reg__
+ 284:DME_2012D.c   **** 			for(Buf_Count1=0;Buf_Count1<30;Buf_Count1++)
+ 1268               		.stabn 68,0,284,.LM151-__vector_12
+ 1269               	.LM151:
+ 1270 0708 1092 0000 		sts (Buf_Count1)+1,__zero_reg__
+ 1271 070c 1092 0000 		sts Buf_Count1,__zero_reg__
+ 1272 0710 E0E0      		ldi r30,lo8(RXD_BUF1)
+ 1273 0712 F0E0      		ldi r31,hi8(RXD_BUF1)
+ 1274 0714 CF01      		movw r24,r30
+ 1275 0716 4D96      		adiw r24,29
+ 1276               	.L130:
+ 285:DME_2012D.c   **** 			{
+ 286:DME_2012D.c   **** 				RXD_BUF1[Buf_Count1]=0x00;
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 30
+
+
+ 1277               		.stabn 68,0,286,.LM152-__vector_12
+ 1278               	.LM152:
+ 1279 0718 1192      		st Z+,__zero_reg__
+ 1280               		.stabn 68,0,284,.LM153-__vector_12
+ 1281               	.LM153:
+ 1282 071a 8E17      		cp r24,r30
+ 1283 071c 9F07      		cpc r25,r31
+ 1284 071e E0F7      		brsh .L130
+ 1285 0720 8EE1      		ldi r24,lo8(30)
+ 1286 0722 90E0      		ldi r25,hi8(30)
+ 1287 0724 9093 0000 		sts (Buf_Count1)+1,r25
+ 1288 0728 8093 0000 		sts Buf_Count1,r24
+ 1289               	.L125:
+ 287:DME_2012D.c   **** 			}
+ 288:DME_2012D.c   **** 	}
+ 289:DME_2012D.c   **** 
+ 290:DME_2012D.c   ****  if(Time_Count >= 10)
+ 1290               		.stabn 68,0,290,.LM154-__vector_12
+ 1291               	.LM154:
+ 1292 072c 8091 0000 		lds r24,Time_Count
+ 1293 0730 9091 0000 		lds r25,(Time_Count)+1
+ 1294 0734 0A97      		sbiw r24,10
+ 1295 0736 30F0      		brlo .L131
+ 291:DME_2012D.c   ****  {
+ 292:DME_2012D.c   ****  		Time_Count = 10;
+ 1296               		.stabn 68,0,292,.LM155-__vector_12
+ 1297               	.LM155:
+ 1298 0738 8AE0      		ldi r24,lo8(10)
+ 1299 073a 90E0      		ldi r25,hi8(10)
+ 1300 073c 9093 0000 		sts (Time_Count)+1,r25
+ 1301 0740 8093 0000 		sts Time_Count,r24
+ 1302               	.L131:
+ 293:DME_2012D.c   **** 	}
+ 294:DME_2012D.c   **** 
+ 295:DME_2012D.c   ****  if(Time_Count >= 10)
+ 1303               		.stabn 68,0,295,.LM156-__vector_12
+ 1304               	.LM156:
+ 1305 0744 8091 0000 		lds r24,Time_Count
+ 1306 0748 9091 0000 		lds r25,(Time_Count)+1
+ 1307 074c 0A97      		sbiw r24,10
+ 1308 074e 30F0      		brlo .L132
+ 296:DME_2012D.c   ****  {
+ 297:DME_2012D.c   ****  		Time_Count = 10;
+ 1309               		.stabn 68,0,297,.LM157-__vector_12
+ 1310               	.LM157:
+ 1311 0750 8AE0      		ldi r24,lo8(10)
+ 1312 0752 90E0      		ldi r25,hi8(10)
+ 1313 0754 9093 0000 		sts (Time_Count)+1,r25
+ 1314 0758 8093 0000 		sts Time_Count,r24
+ 1315               	.L132:
+ 298:DME_2012D.c   **** 	}
+ 299:DME_2012D.c   **** 
+ 300:DME_2012D.c   **** 
+ 301:DME_2012D.c   ****  if(Log_LED_Clear_Time_Count > 72000)
+ 1316               		.stabn 68,0,301,.LM158-__vector_12
+ 1317               	.LM158:
+ 1318 075c 8091 0000 		lds r24,Log_LED_Clear_Time_Count
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 31
+
+
+ 1319 0760 9091 0000 		lds r25,(Log_LED_Clear_Time_Count)+1
+ 1320 0764 A091 0000 		lds r26,(Log_LED_Clear_Time_Count)+2
+ 1321 0768 B091 0000 		lds r27,(Log_LED_Clear_Time_Count)+3
+ 1322 076c 8154      		subi r24,lo8(72001)
+ 1323 076e 9941      		sbci r25,hi8(72001)
+ 1324 0770 A140      		sbci r26,hlo8(72001)
+ 1325 0772 B040      		sbci r27,hhi8(72001)
+ 1326 0774 60F0      		brlo .L133
+ 302:DME_2012D.c   ****  {
+ 303:DME_2012D.c   ****  		Log_LED_Clear_Time_Count = 73000;
+ 1327               		.stabn 68,0,303,.LM159-__vector_12
+ 1328               	.LM159:
+ 1329 0776 88E2      		ldi r24,lo8(73000)
+ 1330 0778 9DE1      		ldi r25,hi8(73000)
+ 1331 077a A1E0      		ldi r26,hlo8(73000)
+ 1332 077c B0E0      		ldi r27,hhi8(73000)
+ 1333 077e 8093 0000 		sts Log_LED_Clear_Time_Count,r24
+ 1334 0782 9093 0000 		sts (Log_LED_Clear_Time_Count)+1,r25
+ 1335 0786 A093 0000 		sts (Log_LED_Clear_Time_Count)+2,r26
+ 1336 078a B093 0000 		sts (Log_LED_Clear_Time_Count)+3,r27
+ 1337               	.L133:
+ 304:DME_2012D.c   **** 	}
+ 305:DME_2012D.c   **** 
+ 306:DME_2012D.c   ****  if(Serial_Time_Count0 >= 100)
+ 1338               		.stabn 68,0,306,.LM160-__vector_12
+ 1339               	.LM160:
+ 1340 078e 4436      		cpi r20,100
+ 1341 0790 5105      		cpc r21,__zero_reg__
+ 1342 0792 30F0      		brlo .L134
+ 307:DME_2012D.c   ****  {
+ 308:DME_2012D.c   ****  		Serial_Time_Count0 = 100;
+ 1343               		.stabn 68,0,308,.LM161-__vector_12
+ 1344               	.LM161:
+ 1345 0794 84E6      		ldi r24,lo8(100)
+ 1346 0796 90E0      		ldi r25,hi8(100)
+ 1347 0798 9093 0000 		sts (Serial_Time_Count0)+1,r25
+ 1348 079c 8093 0000 		sts Serial_Time_Count0,r24
+ 1349               	.L134:
+ 309:DME_2012D.c   **** 	}
+ 310:DME_2012D.c   **** 
+ 311:DME_2012D.c   ****  if(Serial_Time_Count1 >= 100)
+ 1350               		.stabn 68,0,311,.LM162-__vector_12
+ 1351               	.LM162:
+ 1352 07a0 2436      		cpi r18,100
+ 1353 07a2 3105      		cpc r19,__zero_reg__
+ 1354 07a4 30F0      		brlo .L116
+ 312:DME_2012D.c   ****  {
+ 313:DME_2012D.c   ****  		Serial_Time_Count1 = 100;
+ 1355               		.stabn 68,0,313,.LM163-__vector_12
+ 1356               	.LM163:
+ 1357 07a6 84E6      		ldi r24,lo8(100)
+ 1358 07a8 90E0      		ldi r25,hi8(100)
+ 1359 07aa 9093 0000 		sts (Serial_Time_Count1)+1,r25
+ 1360 07ae 8093 0000 		sts Serial_Time_Count1,r24
+ 314:DME_2012D.c   **** 	}
+ 315:DME_2012D.c   **** 	
+ 316:DME_2012D.c   **** 
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 32
+
+
+ 317:DME_2012D.c   **** }	// end of SIGNAL(SIG_OUTPUT_COMPARE1A)
+ 1361               		.stabn 68,0,317,.LM164-__vector_12
+ 1362               	.LM164:
+ 1363               	.L116:
+ 1364               	/* epilogue: frame size=0 */
+ 1365 07b2 FF91      		pop r31
+ 1366 07b4 EF91      		pop r30
+ 1367 07b6 BF91      		pop r27
+ 1368 07b8 AF91      		pop r26
+ 1369 07ba 9F91      		pop r25
+ 1370 07bc 8F91      		pop r24
+ 1371 07be 6F91      		pop r22
+ 1372 07c0 5F91      		pop r21
+ 1373 07c2 4F91      		pop r20
+ 1374 07c4 3F91      		pop r19
+ 1375 07c6 2F91      		pop r18
+ 1376 07c8 0F90      		pop __tmp_reg__
+ 1377 07ca 0FBE      		out __SREG__,__tmp_reg__
+ 1378 07cc 0F90      		pop __tmp_reg__
+ 1379 07ce 1F90      		pop __zero_reg__
+ 1380 07d0 1895      		reti
+ 1381               	/* epilogue end (size=16) */
+ 1382               	/* function __vector_12 size 234 (202) */
+ 1383               		.size	__vector_12, .-__vector_12
+ 1384               	.Lscope9:
+ 1385               		.stabs	"",36,0,0,.Lscope9-__vector_12
+ 1386               		.stabs	"main:F(0,1)",36,0,321,main
+ 1387               	.global	main
+ 1388               		.type	main, @function
+ 1389               	main:
+ 318:DME_2012D.c   **** 
+ 319:DME_2012D.c   **** 
+ 320:DME_2012D.c   **** int main(void)
+ 321:DME_2012D.c   **** { 
+ 1390               		.stabn 68,0,321,.LM165-main
+ 1391               	.LM165:
+ 1392               	/* prologue: frame size=0 */
+ 1393 07d2 C0E0      		ldi r28,lo8(__stack - 0)
+ 1394 07d4 D0E0      		ldi r29,hi8(__stack - 0)
+ 1395 07d6 DEBF      		out __SP_H__,r29
+ 1396 07d8 CDBF      		out __SP_L__,r28
+ 1397               	/* prologue end (size=4) */
+ 322:DME_2012D.c   **** 
+ 323:DME_2012D.c   ****   MCU_initialize(); // initialize MCU
+ 1398               		.stabn 68,0,323,.LM166-main
+ 1399               	.LM166:
+ 1400 07da 0E94 0000 		call MCU_initialize
+ 324:DME_2012D.c   ****   Delay_ms(100);
+ 1401               		.stabn 68,0,324,.LM167-main
+ 1402               	.LM167:
+ 1403 07de 84E6      		ldi r24,lo8(100)
+ 1404 07e0 90E0      		ldi r25,hi8(100)
+ 1405 07e2 0E94 0000 		call Delay_ms
+ 325:DME_2012D.c   **** 
+ 326:DME_2012D.c   **** 	sbi(PORTD,7);//buzzer on
+ 1406               		.stabn 68,0,326,.LM168-main
+ 1407               	.LM168:
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 33
+
+
+ 1408 07e6 979A      		sbi 50-0x20,7
+ 327:DME_2012D.c   **** 	//Led On
+ 328:DME_2012D.c   **** 	PORTA = 0xFF;
+ 1409               		.stabn 68,0,328,.LM169-main
+ 1410               	.LM169:
+ 1411 07e8 8FEF      		ldi r24,lo8(-1)
+ 1412 07ea 8BBB      		out 59-0x20,r24
+ 329:DME_2012D.c   **** 	PORTF = 0xFF;
+ 1413               		.stabn 68,0,329,.LM170-main
+ 1414               	.LM170:
+ 1415 07ec 8093 6200 		sts 98,r24
+ 330:DME_2012D.c   **** 	
+ 331:DME_2012D.c   **** // Timer 1 setting
+ 332:DME_2012D.c   ****   TCCR1A = 0x00;                                // CTC mode(4)
+ 1416               		.stabn 68,0,332,.LM171-main
+ 1417               	.LM171:
+ 1418 07f0 1FBC      		out 79-0x20,__zero_reg__
+ 333:DME_2012D.c   ****   TCCR1B = 0x0C;                                // 11.0592MHz/256/(1+21599) = 2Hz       4319 = 10Hz
+ 1419               		.stabn 68,0,333,.LM172-main
+ 1420               	.LM172:
+ 1421 07f2 8CE0      		ldi r24,lo8(12)
+ 1422 07f4 8EBD      		out 78-0x20,r24
+ 334:DME_2012D.c   ****   OCR1AH = (4319  >> 8);
+ 1423               		.stabn 68,0,334,.LM173-main
+ 1424               	.LM173:
+ 1425 07f6 90E1      		ldi r25,lo8(16)
+ 1426 07f8 9BBD      		out 75-0x20,r25
+ 335:DME_2012D.c   ****   OCR1AL = 4319 & 0xFF;
+ 1427               		.stabn 68,0,335,.LM174-main
+ 1428               	.LM174:
+ 1429 07fa 8FED      		ldi r24,lo8(-33)
+ 1430 07fc 8ABD      		out 74-0x20,r24
+ 336:DME_2012D.c   ****   TCNT1H = 0x00;                                // clear Timer/Counter1
+ 1431               		.stabn 68,0,336,.LM175-main
+ 1432               	.LM175:
+ 1433 07fe 1DBC      		out 77-0x20,__zero_reg__
+ 337:DME_2012D.c   ****   TCNT1L = 0x00;
+ 1434               		.stabn 68,0,337,.LM176-main
+ 1435               	.LM176:
+ 1436 0800 1CBC      		out 76-0x20,__zero_reg__
+ 338:DME_2012D.c   ****   TIMSK	 = 0x10;                                 // enable OC1A interrupt
+ 1437               		.stabn 68,0,338,.LM177-main
+ 1438               	.LM177:
+ 1439 0802 97BF      		out 87-0x20,r25
+ 339:DME_2012D.c   ****   TIFR	 = 0x00;                                  // clear all interrupt flags
+ 1440               		.stabn 68,0,339,.LM178-main
+ 1441               	.LM178:
+ 1442 0804 16BE      		out 86-0x20,__zero_reg__
+ 340:DME_2012D.c   **** 
+ 341:DME_2012D.c   **** 
+ 342:DME_2012D.c   **** 
+ 343:DME_2012D.c   **** // USART0 Setting 
+ 344:DME_2012D.c   ****   UCSR0A = 0x00;
+ 1443               		.stabn 68,0,344,.LM179-main
+ 1444               	.LM179:
+ 1445 0806 1BB8      		out 43-0x20,__zero_reg__
+ 345:DME_2012D.c   ****   UCSR0B = 0x98;
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 34
+
+
+ 1446               		.stabn 68,0,345,.LM180-main
+ 1447               	.LM180:
+ 1448 0808 28E9      		ldi r18,lo8(-104)
+ 1449 080a 2AB9      		out 42-0x20,r18
+ 346:DME_2012D.c   ****   UCSR0C = 0x06;				// 8data, no parity, 1 stop
+ 1450               		.stabn 68,0,346,.LM181-main
+ 1451               	.LM181:
+ 1452 080c 96E0      		ldi r25,lo8(6)
+ 1453 080e 9093 9500 		sts 149,r25
+ 347:DME_2012D.c   ****   UBRR0H = (35 >> 8);				// 19200 baud rate
+ 1454               		.stabn 68,0,347,.LM182-main
+ 1455               	.LM182:
+ 1456 0812 1092 9000 		sts 144,__zero_reg__
+ 348:DME_2012D.c   ****   UBRR0L = 35 & 0xFF;
+ 1457               		.stabn 68,0,348,.LM183-main
+ 1458               	.LM183:
+ 1459 0816 83E2      		ldi r24,lo8(35)
+ 1460 0818 89B9      		out 41-0x20,r24
+ 349:DME_2012D.c   **** 
+ 350:DME_2012D.c   **** 
+ 351:DME_2012D.c   **** // USART1 Setting 
+ 352:DME_2012D.c   ****   UCSR1A = 0x00;
+ 1461               		.stabn 68,0,352,.LM184-main
+ 1462               	.LM184:
+ 1463 081a 1092 9B00 		sts 155,__zero_reg__
+ 353:DME_2012D.c   ****   UCSR1B = 0x98;
+ 1464               		.stabn 68,0,353,.LM185-main
+ 1465               	.LM185:
+ 1466 081e 2093 9A00 		sts 154,r18
+ 354:DME_2012D.c   ****   UCSR1C = 0x06;				// 8data, no parity, 1 stop
+ 1467               		.stabn 68,0,354,.LM186-main
+ 1468               	.LM186:
+ 1469 0822 9093 9D00 		sts 157,r25
+ 355:DME_2012D.c   ****   UBRR1H = (35 >> 8);				// 19200 baud rate
+ 1470               		.stabn 68,0,355,.LM187-main
+ 1471               	.LM187:
+ 1472 0826 1092 9800 		sts 152,__zero_reg__
+ 356:DME_2012D.c   ****   UBRR1L = 35 & 0xFF;
+ 1473               		.stabn 68,0,356,.LM188-main
+ 1474               	.LM188:
+ 1475 082a 8093 9900 		sts 153,r24
+ 357:DME_2012D.c   **** 
+ 358:DME_2012D.c   **** 
+ 359:DME_2012D.c   **** 	Delay_ms(500);
+ 1476               		.stabn 68,0,359,.LM189-main
+ 1477               	.LM189:
+ 1478 082e 84EF      		ldi r24,lo8(500)
+ 1479 0830 91E0      		ldi r25,hi8(500)
+ 1480 0832 0E94 0000 		call Delay_ms
+ 360:DME_2012D.c   **** 
+ 361:DME_2012D.c   **** //LED Off
+ 362:DME_2012D.c   **** 	PORTA = 0x00;
+ 1481               		.stabn 68,0,362,.LM190-main
+ 1482               	.LM190:
+ 1483 0836 1BBA      		out 59-0x20,__zero_reg__
+ 363:DME_2012D.c   **** 	PORTF = 0x00;
+ 1484               		.stabn 68,0,363,.LM191-main
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 35
+
+
+ 1485               	.LM191:
+ 1486 0838 1092 6200 		sts 98,__zero_reg__
+ 364:DME_2012D.c   **** 
+ 365:DME_2012D.c   **** 	cbi(PORTD,7);//buzzer off
+ 1487               		.stabn 68,0,365,.LM192-main
+ 1488               	.LM192:
+ 1489 083c 9798      		cbi 50-0x20,7
+ 366:DME_2012D.c   **** 	
+ 367:DME_2012D.c   **** 	SW_HOME_A =0;
+ 1490               		.stabn 68,0,367,.LM193-main
+ 1491               	.LM193:
+ 1492 083e 1092 0000 		sts SW_HOME_A,__zero_reg__
+ 368:DME_2012D.c   **** 	SW_HOME_B =0;
+ 1493               		.stabn 68,0,368,.LM194-main
+ 1494               	.LM194:
+ 1495 0842 1092 0000 		sts SW_HOME_B,__zero_reg__
+ 369:DME_2012D.c   **** 	
+ 370:DME_2012D.c   **** 	Log_LED_Clear_Time_Count=0;
+ 1496               		.stabn 68,0,370,.LM195-main
+ 1497               	.LM195:
+ 1498 0846 1092 0000 		sts Log_LED_Clear_Time_Count,__zero_reg__
+ 1499 084a 1092 0000 		sts (Log_LED_Clear_Time_Count)+1,__zero_reg__
+ 1500 084e 1092 0000 		sts (Log_LED_Clear_Time_Count)+2,__zero_reg__
+ 1501 0852 1092 0000 		sts (Log_LED_Clear_Time_Count)+3,__zero_reg__
+ 371:DME_2012D.c   **** 
+ 372:DME_2012D.c   ****   sei();
+ 1502               		.stabn 68,0,372,.LM196-main
+ 1503               	.LM196:
+ 1504               	/* #APP */
+ 1505 0856 7894      		sei
+ 1506               	/* #NOAPP */
+ 1507               	.L190:
+ 373:DME_2012D.c   **** 
+ 374:DME_2012D.c   **** while(1)
+ 375:DME_2012D.c   **** 	{
+ 376:DME_2012D.c   **** 
+ 377:DME_2012D.c   **** 	Delay_ms(10);
+ 1508               		.stabn 68,0,377,.LM197-main
+ 1509               	.LM197:
+ 1510 0858 8AE0      		ldi r24,lo8(10)
+ 1511 085a 90E0      		ldi r25,hi8(10)
+ 1512 085c 0E94 0000 		call Delay_ms
+ 378:DME_2012D.c   **** 
+ 379:DME_2012D.c   **** 	if(Time_Flag ==1)
+ 1513               		.stabn 68,0,379,.LM198-main
+ 1514               	.LM198:
+ 1515 0860 8091 0000 		lds r24,Time_Flag
+ 1516 0864 9091 0000 		lds r25,(Time_Flag)+1
+ 1517 0868 0197      		sbiw r24,1
+ 1518 086a B1F7      		brne .L190
+ 380:DME_2012D.c   **** 	{
+ 381:DME_2012D.c   **** 		Time_Flag =0;
+ 1519               		.stabn 68,0,381,.LM199-main
+ 1520               	.LM199:
+ 1521 086c 1092 0000 		sts (Time_Flag)+1,__zero_reg__
+ 1522 0870 1092 0000 		sts Time_Flag,__zero_reg__
+ 382:DME_2012D.c   **** 
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 36
+
+
+ 383:DME_2012D.c   **** 	  //ETI_LOS=inp(PINE) & 0x40;
+ 384:DME_2012D.c   **** 	  //if(ETI_LOS == 0x40){	ETI_LOS_BUF = 1; } else{ ETI_LOS_BUF = 0; }
+ 385:DME_2012D.c   **** 	  ETI_LOS=inp(PINE) & 0xC0;
+ 1523               		.stabn 68,0,385,.LM200-main
+ 1524               	.LM200:
+ 1525 0874 81B1      		in r24,33-0x20
+ 1526 0876 807C      		andi r24,lo8(-64)
+ 1527 0878 8093 0000 		sts ETI_LOS,r24
+ 386:DME_2012D.c   **** 	  if((ETI_LOS & 0x40) == 0x40){	ETI_LOS_BUF0 = 1; } else{ ETI_LOS_BUF0 = 0; }
+ 1528               		.stabn 68,0,386,.LM201-main
+ 1529               	.LM201:
+ 1530 087c 86FF      		sbrs r24,6
+ 1531 087e 04C0      		rjmp .L145
+ 1532 0880 81E0      		ldi r24,lo8(1)
+ 1533 0882 8093 0000 		sts ETI_LOS_BUF0,r24
+ 1534 0886 02C0      		rjmp .L146
+ 1535               	.L145:
+ 1536 0888 1092 0000 		sts ETI_LOS_BUF0,__zero_reg__
+ 1537               	.L146:
+ 387:DME_2012D.c   **** 	  if((ETI_LOS & 0x80) == 0x80){	ETI_LOS_BUF1 = 1; } else{ ETI_LOS_BUF1 = 0; }
+ 1538               		.stabn 68,0,387,.LM202-main
+ 1539               	.LM202:
+ 1540 088c 9091 0000 		lds r25,ETI_LOS
+ 1541 0890 97FF      		sbrs r25,7
+ 1542 0892 04C0      		rjmp .L147
+ 1543 0894 81E0      		ldi r24,lo8(1)
+ 1544 0896 8093 0000 		sts ETI_LOS_BUF1,r24
+ 1545 089a 02C0      		rjmp .L148
+ 1546               	.L147:
+ 1547 089c 1092 0000 		sts ETI_LOS_BUF1,__zero_reg__
+ 1548               	.L148:
+ 388:DME_2012D.c   **** 	 
+ 389:DME_2012D.c   **** 
+ 390:DME_2012D.c   **** 		if(ETI_LOS != ETI_LOS_TEMP)
+ 1549               		.stabn 68,0,390,.LM203-main
+ 1550               	.LM203:
+ 1551 08a0 8091 0000 		lds r24,ETI_LOS_TEMP
+ 1552 08a4 9817      		cp r25,r24
+ 1553 08a6 09F4      		brne .+2
+ 1554 08a8 83C0      		rjmp .L149
+ 391:DME_2012D.c   **** 		{
+ 392:DME_2012D.c   **** 			ETI_LOS_TEMP = ETI_LOS;
+ 1555               		.stabn 68,0,392,.LM204-main
+ 1556               	.LM204:
+ 1557 08aa 9093 0000 		sts ETI_LOS_TEMP,r25
+ 393:DME_2012D.c   **** 	
+ 394:DME_2012D.c   **** 			if(ETI_LOS == 0xC0)
+ 1558               		.stabn 68,0,394,.LM205-main
+ 1559               	.LM205:
+ 1560 08ae 903C      		cpi r25,lo8(-64)
+ 1561 08b0 09F0      		breq .+2
+ 1562 08b2 3FC0      		rjmp .L150
+ 395:DME_2012D.c   **** 		  {
+ 396:DME_2012D.c   **** 				Beep();//ETI ON
+ 1563               		.stabn 68,0,396,.LM206-main
+ 1564               	.LM206:
+ 1565 08b4 0E94 0000 		call Beep
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 37
+
+
+ 397:DME_2012D.c   **** 				TX0_char(0x1B);TX0_char(0x02);TX0_char(0x00);TX0_char(0x12);TX0_char(0x00);TX0_char(0x01);TX0_c
+ 1566               		.stabn 68,0,397,.LM207-main
+ 1567               	.LM207:
+ 1568 08b8 8BE1      		ldi r24,lo8(27)
+ 1569 08ba 0E94 0000 		call TX0_char
+ 1570 08be 82E0      		ldi r24,lo8(2)
+ 1571 08c0 0E94 0000 		call TX0_char
+ 1572 08c4 80E0      		ldi r24,lo8(0)
+ 1573 08c6 0E94 0000 		call TX0_char
+ 1574 08ca 82E1      		ldi r24,lo8(18)
+ 1575 08cc 0E94 0000 		call TX0_char
+ 1576 08d0 80E0      		ldi r24,lo8(0)
+ 1577 08d2 0E94 0000 		call TX0_char
+ 1578 08d6 81E0      		ldi r24,lo8(1)
+ 1579 08d8 0E94 0000 		call TX0_char
+ 1580 08dc 8091 0000 		lds r24,ETI_LOS_BUF0
+ 1581 08e0 0E94 0000 		call TX0_char
+ 1582 08e4 8BE1      		ldi r24,lo8(27)
+ 1583 08e6 0E94 0000 		call TX0_char
+ 1584 08ea 83E0      		ldi r24,lo8(3)
+ 1585 08ec 0E94 0000 		call TX0_char
+ 398:DME_2012D.c   **** 				TX1_char(0x1B);TX1_char(0x02);TX1_char(0x00);TX1_char(0x12);TX1_char(0x00);TX1_char(0x01);TX1_c
+ 1586               		.stabn 68,0,398,.LM208-main
+ 1587               	.LM208:
+ 1588 08f0 8BE1      		ldi r24,lo8(27)
+ 1589 08f2 0E94 0000 		call TX1_char
+ 1590 08f6 82E0      		ldi r24,lo8(2)
+ 1591 08f8 0E94 0000 		call TX1_char
+ 1592 08fc 80E0      		ldi r24,lo8(0)
+ 1593 08fe 0E94 0000 		call TX1_char
+ 1594 0902 82E1      		ldi r24,lo8(18)
+ 1595 0904 0E94 0000 		call TX1_char
+ 1596 0908 80E0      		ldi r24,lo8(0)
+ 1597 090a 0E94 0000 		call TX1_char
+ 1598 090e 81E0      		ldi r24,lo8(1)
+ 1599 0910 0E94 0000 		call TX1_char
+ 1600 0914 8091 0000 		lds r24,ETI_LOS_BUF1
+ 1601 0918 0E94 0000 		call TX1_char
+ 1602 091c 8BE1      		ldi r24,lo8(27)
+ 1603 091e 0E94 0000 		call TX1_char
+ 1604 0922 83E0      		ldi r24,lo8(3)
+ 1605 0924 0E94 0000 		call TX1_char
+ 399:DME_2012D.c   **** 				cbi(PORTD,5);
+ 1606               		.stabn 68,0,399,.LM209-main
+ 1607               	.LM209:
+ 1608 0928 9598      		cbi 50-0x20,5
+ 400:DME_2012D.c   **** 				cbi(PORTD,6);
+ 1609               		.stabn 68,0,400,.LM210-main
+ 1610               	.LM210:
+ 1611 092a 9698      		cbi 50-0x20,6
+ 401:DME_2012D.c   **** 				sbi(PORTA,3);
+ 1612               		.stabn 68,0,401,.LM211-main
+ 1613               	.LM211:
+ 1614 092c DB9A      		sbi 59-0x20,3
+ 402:DME_2012D.c   **** 				cbi(PORTA,2);
+ 1615               		.stabn 68,0,402,.LM212-main
+ 1616               	.LM212:
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 38
+
+
+ 1617 092e DA98      		cbi 59-0x20,2
+ 1618 0930 3FC0      		rjmp .L149
+ 1619               	.L150:
+ 403:DME_2012D.c   **** 		  	
+ 404:DME_2012D.c   **** 		  }else{
+ 405:DME_2012D.c   **** 		  	Beep();//ETI OFF
+ 1620               		.stabn 68,0,405,.LM213-main
+ 1621               	.LM213:
+ 1622 0932 0E94 0000 		call Beep
+ 406:DME_2012D.c   **** 				TX0_char(0x1B);TX0_char(0x02);TX0_char(0x00);TX0_char(0x12);TX0_char(0x00);TX0_char(0x01);TX0_c
+ 1623               		.stabn 68,0,406,.LM214-main
+ 1624               	.LM214:
+ 1625 0936 8BE1      		ldi r24,lo8(27)
+ 1626 0938 0E94 0000 		call TX0_char
+ 1627 093c 82E0      		ldi r24,lo8(2)
+ 1628 093e 0E94 0000 		call TX0_char
+ 1629 0942 80E0      		ldi r24,lo8(0)
+ 1630 0944 0E94 0000 		call TX0_char
+ 1631 0948 82E1      		ldi r24,lo8(18)
+ 1632 094a 0E94 0000 		call TX0_char
+ 1633 094e 80E0      		ldi r24,lo8(0)
+ 1634 0950 0E94 0000 		call TX0_char
+ 1635 0954 81E0      		ldi r24,lo8(1)
+ 1636 0956 0E94 0000 		call TX0_char
+ 1637 095a 8091 0000 		lds r24,ETI_LOS_BUF0
+ 1638 095e 0E94 0000 		call TX0_char
+ 1639 0962 8BE1      		ldi r24,lo8(27)
+ 1640 0964 0E94 0000 		call TX0_char
+ 1641 0968 83E0      		ldi r24,lo8(3)
+ 1642 096a 0E94 0000 		call TX0_char
+ 407:DME_2012D.c   **** 				TX1_char(0x1B);TX1_char(0x02);TX1_char(0x00);TX1_char(0x12);TX1_char(0x00);TX1_char(0x01);TX1_c
+ 1643               		.stabn 68,0,407,.LM215-main
+ 1644               	.LM215:
+ 1645 096e 8BE1      		ldi r24,lo8(27)
+ 1646 0970 0E94 0000 		call TX1_char
+ 1647 0974 82E0      		ldi r24,lo8(2)
+ 1648 0976 0E94 0000 		call TX1_char
+ 1649 097a 80E0      		ldi r24,lo8(0)
+ 1650 097c 0E94 0000 		call TX1_char
+ 1651 0980 82E1      		ldi r24,lo8(18)
+ 1652 0982 0E94 0000 		call TX1_char
+ 1653 0986 80E0      		ldi r24,lo8(0)
+ 1654 0988 0E94 0000 		call TX1_char
+ 1655 098c 81E0      		ldi r24,lo8(1)
+ 1656 098e 0E94 0000 		call TX1_char
+ 1657 0992 8091 0000 		lds r24,ETI_LOS_BUF1
+ 1658 0996 0E94 0000 		call TX1_char
+ 1659 099a 8BE1      		ldi r24,lo8(27)
+ 1660 099c 0E94 0000 		call TX1_char
+ 1661 09a0 83E0      		ldi r24,lo8(3)
+ 1662 09a2 0E94 0000 		call TX1_char
+ 408:DME_2012D.c   **** 				sbi(PORTD,5);
+ 1663               		.stabn 68,0,408,.LM216-main
+ 1664               	.LM216:
+ 1665 09a6 959A      		sbi 50-0x20,5
+ 409:DME_2012D.c   **** 		  	sbi(PORTD,6);
+ 1666               		.stabn 68,0,409,.LM217-main
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 39
+
+
+ 1667               	.LM217:
+ 1668 09a8 969A      		sbi 50-0x20,6
+ 410:DME_2012D.c   **** 		  	sbi(PORTD,7);
+ 1669               		.stabn 68,0,410,.LM218-main
+ 1670               	.LM218:
+ 1671 09aa 979A      		sbi 50-0x20,7
+ 411:DME_2012D.c   **** 		  	cbi(PORTA,3);
+ 1672               		.stabn 68,0,411,.LM219-main
+ 1673               	.LM219:
+ 1674 09ac DB98      		cbi 59-0x20,3
+ 412:DME_2012D.c   **** 		  	sbi(PORTA,2);
+ 1675               		.stabn 68,0,412,.LM220-main
+ 1676               	.LM220:
+ 1677 09ae DA9A      		sbi 59-0x20,2
+ 1678               	.L149:
+ 413:DME_2012D.c   **** 		 
+ 414:DME_2012D.c   **** 			}
+ 415:DME_2012D.c   **** 		}
+ 416:DME_2012D.c   **** 	
+ 417:DME_2012D.c   **** 	
+ 418:DME_2012D.c   **** 		Key_Input= (inp(PINB) & 0xF0) | (inp(PINC) & 0x0F);
+ 1679               		.stabn 68,0,418,.LM221-main
+ 1680               	.LM221:
+ 1681 09b0 96B3      		in r25,54-0x20
+ 1682 09b2 907F      		andi r25,lo8(-16)
+ 1683 09b4 83B3      		in r24,51-0x20
+ 1684 09b6 8F70      		andi r24,lo8(15)
+ 1685 09b8 982B      		or r25,r24
+ 1686 09ba 9093 0000 		sts Key_Input,r25
+ 419:DME_2012D.c   **** 		RM_RST_KEY = inp(PINE) & 0x20;
+ 1687               		.stabn 68,0,419,.LM222-main
+ 1688               	.LM222:
+ 1689 09be 91B1      		in r25,33-0x20
+ 1690 09c0 9072      		andi r25,lo8(32)
+ 1691 09c2 9093 0000 		sts RM_RST_KEY,r25
+ 420:DME_2012D.c   **** 		Key_Clear =  inp(PING) & 0x01;
+ 1692               		.stabn 68,0,420,.LM223-main
+ 1693               	.LM223:
+ 1694 09c6 8091 6300 		lds r24,99
+ 1695 09ca 8170      		andi r24,lo8(1)
+ 1696 09cc 8093 0000 		sts Key_Clear,r24
+ 421:DME_2012D.c   **** 	
+ 422:DME_2012D.c   **** 		if((RM_RST_KEY == 0x00) && (Remote_Flag == 0))
+ 1697               		.stabn 68,0,422,.LM224-main
+ 1698               	.LM224:
+ 1699 09d0 9923      		tst r25
+ 1700 09d2 09F0      		breq .+2
+ 1701 09d4 58C0      		rjmp .L152
+ 1702 09d6 C091 0000 		lds r28,Remote_Flag
+ 1703 09da CC23      		tst r28
+ 1704 09dc 09F0      		breq .+2
+ 1705 09de 53C0      		rjmp .L152
+ 423:DME_2012D.c   **** 		{
+ 424:DME_2012D.c   **** 				Beep();
+ 1706               		.stabn 68,0,424,.LM225-main
+ 1707               	.LM225:
+ 1708 09e0 0E94 0000 		call Beep
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 40
+
+
+ 425:DME_2012D.c   **** 				Remote_Flag =1;
+ 1709               		.stabn 68,0,425,.LM226-main
+ 1710               	.LM226:
+ 1711 09e4 01E0      		ldi r16,lo8(1)
+ 1712 09e6 0093 0000 		sts Remote_Flag,r16
+ 426:DME_2012D.c   **** 				sbi(PORTD,7);//buzzer on
+ 1713               		.stabn 68,0,426,.LM227-main
+ 1714               	.LM227:
+ 1715 09ea 979A      		sbi 50-0x20,7
+ 427:DME_2012D.c   **** 				//Led On
+ 428:DME_2012D.c   **** 				PORTA = 0xFF;
+ 1716               		.stabn 68,0,428,.LM228-main
+ 1717               	.LM228:
+ 1718 09ec 1FEF      		ldi r17,lo8(-1)
+ 1719 09ee 1BBB      		out 59-0x20,r17
+ 429:DME_2012D.c   **** 				PORTF = 0xFF;
+ 1720               		.stabn 68,0,429,.LM229-main
+ 1721               	.LM229:
+ 1722 09f0 1093 6200 		sts 98,r17
+ 430:DME_2012D.c   **** 				Delay_ms(500);
+ 1723               		.stabn 68,0,430,.LM230-main
+ 1724               	.LM230:
+ 1725 09f4 84EF      		ldi r24,lo8(500)
+ 1726 09f6 91E0      		ldi r25,hi8(500)
+ 1727 09f8 0E94 0000 		call Delay_ms
+ 431:DME_2012D.c   **** 				//LED Off
+ 432:DME_2012D.c   **** 				PORTA = 0x00;
+ 1728               		.stabn 68,0,432,.LM231-main
+ 1729               	.LM231:
+ 1730 09fc CBBB      		out 59-0x20,r28
+ 433:DME_2012D.c   **** 				PORTF = 0x00;
+ 1731               		.stabn 68,0,433,.LM232-main
+ 1732               	.LM232:
+ 1733 09fe C093 6200 		sts 98,r28
+ 434:DME_2012D.c   **** 				cbi(PORTD,7);//buzzer off
+ 1734               		.stabn 68,0,434,.LM233-main
+ 1735               	.LM233:
+ 1736 0a02 9798      		cbi 50-0x20,7
+ 435:DME_2012D.c   **** 				cbi(PORTD,5);// ETI Fault
+ 1737               		.stabn 68,0,435,.LM234-main
+ 1738               	.LM234:
+ 1739 0a04 9598      		cbi 50-0x20,5
+ 436:DME_2012D.c   **** 				cbi(PORTD,6);// Buzzer Out
+ 1740               		.stabn 68,0,436,.LM235-main
+ 1741               	.LM235:
+ 1742 0a06 9698      		cbi 50-0x20,6
+ 437:DME_2012D.c   **** 	
+ 438:DME_2012D.c   **** 				ETI_LOS_TEMP=0xFF;
+ 1743               		.stabn 68,0,438,.LM236-main
+ 1744               	.LM236:
+ 1745 0a08 1093 0000 		sts ETI_LOS_TEMP,r17
+ 439:DME_2012D.c   **** 				Key_Flag =0;			
+ 1746               		.stabn 68,0,439,.LM237-main
+ 1747               	.LM237:
+ 1748 0a0c C093 0000 		sts Key_Flag,r28
+ 440:DME_2012D.c   **** 				SW_HOME_A =0;
+ 1749               		.stabn 68,0,440,.LM238-main
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 41
+
+
+ 1750               	.LM238:
+ 1751 0a10 C093 0000 		sts SW_HOME_A,r28
+ 441:DME_2012D.c   **** 				SW_HOME_B =0;
+ 1752               		.stabn 68,0,441,.LM239-main
+ 1753               	.LM239:
+ 1754 0a14 C093 0000 		sts SW_HOME_B,r28
+ 442:DME_2012D.c   **** 	
+ 443:DME_2012D.c   **** 				TX0_char(0x1B);TX0_char(0x02);TX0_char(0x00);TX0_char(0x11);TX0_char(0x00);TX0_char(0x01);TX0_c
+ 1755               		.stabn 68,0,443,.LM240-main
+ 1756               	.LM240:
+ 1757 0a18 8BE1      		ldi r24,lo8(27)
+ 1758 0a1a 0E94 0000 		call TX0_char
+ 1759 0a1e 82E0      		ldi r24,lo8(2)
+ 1760 0a20 0E94 0000 		call TX0_char
+ 1761 0a24 8C2F      		mov r24,r28
+ 1762 0a26 0E94 0000 		call TX0_char
+ 1763 0a2a 81E1      		ldi r24,lo8(17)
+ 1764 0a2c 0E94 0000 		call TX0_char
+ 1765 0a30 8C2F      		mov r24,r28
+ 1766 0a32 0E94 0000 		call TX0_char
+ 1767 0a36 802F      		mov r24,r16
+ 1768 0a38 0E94 0000 		call TX0_char
+ 1769 0a3c 86E0      		ldi r24,lo8(6)
+ 1770 0a3e 0E94 0000 		call TX0_char
+ 1771 0a42 8BE1      		ldi r24,lo8(27)
+ 1772 0a44 0E94 0000 		call TX0_char
+ 1773 0a48 83E0      		ldi r24,lo8(3)
+ 1774 0a4a 0E94 0000 		call TX0_char
+ 444:DME_2012D.c   **** 				TX1_char(0x1B);TX1_char(0x02);TX1_char(0x00);TX1_char(0x11);TX1_char(0x00);TX1_char(0x01);TX1_c
+ 1775               		.stabn 68,0,444,.LM241-main
+ 1776               	.LM241:
+ 1777 0a4e 8BE1      		ldi r24,lo8(27)
+ 1778 0a50 0E94 0000 		call TX1_char
+ 1779 0a54 82E0      		ldi r24,lo8(2)
+ 1780 0a56 0E94 0000 		call TX1_char
+ 1781 0a5a 8C2F      		mov r24,r28
+ 1782 0a5c 0E94 0000 		call TX1_char
+ 1783 0a60 81E1      		ldi r24,lo8(17)
+ 1784 0a62 0E94 0000 		call TX1_char
+ 1785 0a66 8C2F      		mov r24,r28
+ 1786 0a68 0E94 0000 		call TX1_char
+ 1787 0a6c 802F      		mov r24,r16
+ 1788 0a6e 0E94 0000 		call TX1_char
+ 1789 0a72 86E0      		ldi r24,lo8(6)
+ 1790 0a74 0E94 0000 		call TX1_char
+ 1791 0a78 8BE1      		ldi r24,lo8(27)
+ 1792 0a7a 0E94 0000 		call TX1_char
+ 1793 0a7e 83E0      		ldi r24,lo8(3)
+ 1794 0a80 0E94 0000 		call TX1_char
+ 1795 0a84 06C0      		rjmp .L153
+ 1796               	.L152:
+ 445:DME_2012D.c   **** 					
+ 446:DME_2012D.c   **** 		}else if(RM_RST_KEY == 0x20){
+ 1797               		.stabn 68,0,446,.LM242-main
+ 1798               	.LM242:
+ 1799 0a86 8091 0000 		lds r24,RM_RST_KEY
+ 1800 0a8a 8032      		cpi r24,lo8(32)
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 42
+
+
+ 1801 0a8c 11F4      		brne .L153
+ 447:DME_2012D.c   **** 				
+ 448:DME_2012D.c   **** 				Remote_Flag =0;
+ 1802               		.stabn 68,0,448,.LM243-main
+ 1803               	.LM243:
+ 1804 0a8e 1092 0000 		sts Remote_Flag,__zero_reg__
+ 1805               	.L153:
+ 449:DME_2012D.c   **** 		}
+ 450:DME_2012D.c   **** 
+ 451:DME_2012D.c   **** 		
+ 452:DME_2012D.c   **** 		if((Key_Flag ==0) && (Key_Clear != 0x00))	
+ 1806               		.stabn 68,0,452,.LM244-main
+ 1807               	.LM244:
+ 1808 0a92 8091 0000 		lds r24,Key_Flag
+ 1809 0a96 8823      		tst r24
+ 1810 0a98 09F0      		breq .+2
+ 1811 0a9a 77C1      		rjmp .L155
+ 1812 0a9c 8091 0000 		lds r24,Key_Clear
+ 1813 0aa0 8823      		tst r24
+ 1814 0aa2 09F4      		brne .+2
+ 1815 0aa4 72C1      		rjmp .L155
+ 453:DME_2012D.c   **** 		{
+ 454:DME_2012D.c   **** 			if((Key_Input == 0x9F) && (READY_FLAG==1)){
+ 1816               		.stabn 68,0,454,.LM245-main
+ 1817               	.LM245:
+ 1818 0aa6 9091 0000 		lds r25,Key_Input
+ 1819 0aaa 9F39      		cpi r25,lo8(-97)
+ 1820 0aac F9F4      		brne .L156
+ 1821 0aae 1091 0000 		lds r17,READY_FLAG
+ 1822 0ab2 1130      		cpi r17,lo8(1)
+ 1823 0ab4 D9F4      		brne .L156
+ 455:DME_2012D.c   **** 				//Service A Up_Down SW LCD On/Off
+ 456:DME_2012D.c   **** 				Key_Flag =1;
+ 1824               		.stabn 68,0,456,.LM246-main
+ 1825               	.LM246:
+ 1826 0ab6 1093 0000 		sts Key_Flag,r17
+ 457:DME_2012D.c   **** 				if(SW_HOME_A == 0)
+ 1827               		.stabn 68,0,457,.LM247-main
+ 1828               	.LM247:
+ 1829 0aba C091 0000 		lds r28,SW_HOME_A
+ 1830 0abe CC23      		tst r28
+ 1831 0ac0 09F0      		breq .+2
+ 1832 0ac2 63C1      		rjmp .L155
+ 458:DME_2012D.c   **** 				{
+ 459:DME_2012D.c   **** 					TX0_char(0x1B);TX0_char(0x02);TX0_char(0x00);TX0_char(0x11);TX0_char(0x00);TX0_char(0x01);TX0_
+ 1833               		.stabn 68,0,459,.LM248-main
+ 1834               	.LM248:
+ 1835 0ac4 8BE1      		ldi r24,lo8(27)
+ 1836 0ac6 0E94 0000 		call TX0_char
+ 1837 0aca 82E0      		ldi r24,lo8(2)
+ 1838 0acc 0E94 0000 		call TX0_char
+ 1839 0ad0 8C2F      		mov r24,r28
+ 1840 0ad2 0E94 0000 		call TX0_char
+ 1841 0ad6 81E1      		ldi r24,lo8(17)
+ 1842 0ad8 0E94 0000 		call TX0_char
+ 1843 0adc 8C2F      		mov r24,r28
+ 1844 0ade 0E94 0000 		call TX0_char
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 43
+
+
+ 1845 0ae2 812F      		mov r24,r17
+ 1846 0ae4 0E94 0000 		call TX0_char
+ 1847 0ae8 87E0      		ldi r24,lo8(7)
+ 1848 0aea 40C0      		rjmp .L193
+ 1849               	.L156:
+ 460:DME_2012D.c   **** 					Beep();
+ 461:DME_2012D.c   **** 	
+ 462:DME_2012D.c   **** 				}
+ 463:DME_2012D.c   **** 	
+ 464:DME_2012D.c   **** 			}else if((Key_Input == 0xF9) && (READY_FLAG==1)){
+ 1850               		.stabn 68,0,464,.LM249-main
+ 1851               	.LM249:
+ 1852 0aec 993F      		cpi r25,lo8(-7)
+ 1853 0aee F9F4      		brne .L159
+ 1854 0af0 1091 0000 		lds r17,READY_FLAG
+ 1855 0af4 1130      		cpi r17,lo8(1)
+ 1856 0af6 D9F4      		brne .L159
+ 465:DME_2012D.c   **** 				//Service B Up_Down SW LCD On/Off
+ 466:DME_2012D.c   **** 				Key_Flag =1;
+ 1857               		.stabn 68,0,466,.LM250-main
+ 1858               	.LM250:
+ 1859 0af8 1093 0000 		sts Key_Flag,r17
+ 467:DME_2012D.c   **** 				if(SW_HOME_B == 0)
+ 1860               		.stabn 68,0,467,.LM251-main
+ 1861               	.LM251:
+ 1862 0afc C091 0000 		lds r28,SW_HOME_B
+ 1863 0b00 CC23      		tst r28
+ 1864 0b02 09F0      		breq .+2
+ 1865 0b04 42C1      		rjmp .L155
+ 468:DME_2012D.c   **** 				{
+ 469:DME_2012D.c   **** 					TX1_char(0x1B);TX1_char(0x02);TX1_char(0x00);TX1_char(0x11);TX1_char(0x00);TX1_char(0x01);TX1_
+ 1866               		.stabn 68,0,469,.LM252-main
+ 1867               	.LM252:
+ 1868 0b06 8BE1      		ldi r24,lo8(27)
+ 1869 0b08 0E94 0000 		call TX1_char
+ 1870 0b0c 82E0      		ldi r24,lo8(2)
+ 1871 0b0e 0E94 0000 		call TX1_char
+ 1872 0b12 8C2F      		mov r24,r28
+ 1873 0b14 0E94 0000 		call TX1_char
+ 1874 0b18 81E1      		ldi r24,lo8(17)
+ 1875 0b1a 0E94 0000 		call TX1_char
+ 1876 0b1e 8C2F      		mov r24,r28
+ 1877 0b20 0E94 0000 		call TX1_char
+ 1878 0b24 812F      		mov r24,r17
+ 1879 0b26 0E94 0000 		call TX1_char
+ 1880 0b2a 87E0      		ldi r24,lo8(7)
+ 1881 0b2c CBC0      		rjmp .L191
+ 1882               	.L159:
+ 470:DME_2012D.c   **** 					Beep();
+ 471:DME_2012D.c   **** 	
+ 472:DME_2012D.c   **** 				}
+ 473:DME_2012D.c   **** 	
+ 474:DME_2012D.c   **** 			}else	if((Key_Input == 0xEF) && (READY_FLAG==1)){
+ 1883               		.stabn 68,0,474,.LM253-main
+ 1884               	.LM253:
+ 1885 0b2e 9F3E      		cpi r25,lo8(-17)
+ 1886 0b30 31F5      		brne .L162
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 44
+
+
+ 1887 0b32 C091 0000 		lds r28,READY_FLAG
+ 1888 0b36 C130      		cpi r28,lo8(1)
+ 1889 0b38 11F5      		brne .L162
+ 475:DME_2012D.c   **** 				//Service A Home SW
+ 476:DME_2012D.c   **** 				Key_Flag =1;
+ 1890               		.stabn 68,0,476,.LM254-main
+ 1891               	.LM254:
+ 1892 0b3a C093 0000 		sts Key_Flag,r28
+ 477:DME_2012D.c   **** 				RM_RST_KEY_Flag=0;
+ 1893               		.stabn 68,0,477,.LM255-main
+ 1894               	.LM255:
+ 1895 0b3e 1092 0000 		sts RM_RST_KEY_Flag,__zero_reg__
+ 478:DME_2012D.c   **** 				SW_HOME_A =1;
+ 1896               		.stabn 68,0,478,.LM256-main
+ 1897               	.LM256:
+ 1898 0b42 C093 0000 		sts SW_HOME_A,r28
+ 479:DME_2012D.c   **** 				TX0_char(0x1B);TX0_char(0x02);TX0_char(0x00);TX0_char(0x11);TX0_char(0x00);TX0_char(0x01);TX0_c
+ 1899               		.stabn 68,0,479,.LM257-main
+ 1900               	.LM257:
+ 1901 0b46 8BE1      		ldi r24,lo8(27)
+ 1902 0b48 0E94 0000 		call TX0_char
+ 1903 0b4c 82E0      		ldi r24,lo8(2)
+ 1904 0b4e 0E94 0000 		call TX0_char
+ 1905 0b52 80E0      		ldi r24,lo8(0)
+ 1906 0b54 0E94 0000 		call TX0_char
+ 1907 0b58 81E1      		ldi r24,lo8(17)
+ 1908 0b5a 0E94 0000 		call TX0_char
+ 1909 0b5e 80E0      		ldi r24,lo8(0)
+ 1910 0b60 0E94 0000 		call TX0_char
+ 1911 0b64 8C2F      		mov r24,r28
+ 1912 0b66 0E94 0000 		call TX0_char
+ 1913 0b6a 8C2F      		mov r24,r28
+ 1914               	.L193:
+ 1915 0b6c 0E94 0000 		call TX0_char
+ 1916 0b70 8BE1      		ldi r24,lo8(27)
+ 1917 0b72 0E94 0000 		call TX0_char
+ 1918 0b76 83E0      		ldi r24,lo8(3)
+ 1919 0b78 0E94 0000 		call TX0_char
+ 480:DME_2012D.c   **** 				Beep();
+ 1920               		.stabn 68,0,480,.LM258-main
+ 1921               	.LM258:
+ 1922 0b7c ABC0      		rjmp .L192
+ 1923               	.L162:
+ 481:DME_2012D.c   **** 
+ 482:DME_2012D.c   **** 			}else	if((Key_Input == 0xF7) && (READY_FLAG==1)){
+ 1924               		.stabn 68,0,482,.LM259-main
+ 1925               	.LM259:
+ 1926 0b7e 973F      		cpi r25,lo8(-9)
+ 1927 0b80 F1F4      		brne .L164
+ 1928 0b82 C091 0000 		lds r28,READY_FLAG
+ 1929 0b86 C130      		cpi r28,lo8(1)
+ 1930 0b88 D1F4      		brne .L164
+ 483:DME_2012D.c   **** 				//Service B Home SW
+ 484:DME_2012D.c   **** 				Key_Flag =1;
+ 1931               		.stabn 68,0,484,.LM260-main
+ 1932               	.LM260:
+ 1933 0b8a C093 0000 		sts Key_Flag,r28
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 45
+
+
+ 485:DME_2012D.c   **** 				RM_RST_KEY_Flag=0;
+ 1934               		.stabn 68,0,485,.LM261-main
+ 1935               	.LM261:
+ 1936 0b8e 1092 0000 		sts RM_RST_KEY_Flag,__zero_reg__
+ 486:DME_2012D.c   **** 				SW_HOME_B =1;
+ 1937               		.stabn 68,0,486,.LM262-main
+ 1938               	.LM262:
+ 1939 0b92 C093 0000 		sts SW_HOME_B,r28
+ 487:DME_2012D.c   **** 				TX1_char(0x1B);TX1_char(0x02);TX1_char(0x00);TX1_char(0x11);TX1_char(0x00);TX1_char(0x01);TX1_c
+ 1940               		.stabn 68,0,487,.LM263-main
+ 1941               	.LM263:
+ 1942 0b96 8BE1      		ldi r24,lo8(27)
+ 1943 0b98 0E94 0000 		call TX1_char
+ 1944 0b9c 82E0      		ldi r24,lo8(2)
+ 1945 0b9e 0E94 0000 		call TX1_char
+ 1946 0ba2 80E0      		ldi r24,lo8(0)
+ 1947 0ba4 0E94 0000 		call TX1_char
+ 1948 0ba8 81E1      		ldi r24,lo8(17)
+ 1949 0baa 0E94 0000 		call TX1_char
+ 1950 0bae 80E0      		ldi r24,lo8(0)
+ 1951 0bb0 0E94 0000 		call TX1_char
+ 1952 0bb4 8C2F      		mov r24,r28
+ 1953 0bb6 0E94 0000 		call TX1_char
+ 1954 0bba 8C2F      		mov r24,r28
+ 1955 0bbc 83C0      		rjmp .L191
+ 1956               	.L164:
+ 488:DME_2012D.c   **** 				Beep();
+ 489:DME_2012D.c   **** 
+ 490:DME_2012D.c   **** 			}else if((Key_Input == 0xDF) && (READY_FLAG==1)){
+ 1957               		.stabn 68,0,490,.LM264-main
+ 1958               	.LM264:
+ 1959 0bbe 9F3D      		cpi r25,lo8(-33)
+ 1960 0bc0 F9F4      		brne .L166
+ 1961 0bc2 8091 0000 		lds r24,READY_FLAG
+ 1962 0bc6 8130      		cpi r24,lo8(1)
+ 1963 0bc8 D9F4      		brne .L166
+ 491:DME_2012D.c   **** 				//Service A UP SW
+ 492:DME_2012D.c   **** 				Key_Flag =1;
+ 1964               		.stabn 68,0,492,.LM265-main
+ 1965               	.LM265:
+ 1966 0bca 8093 0000 		sts Key_Flag,r24
+ 493:DME_2012D.c   **** 				if(SW_HOME_A == 1)
+ 1967               		.stabn 68,0,493,.LM266-main
+ 1968               	.LM266:
+ 1969 0bce C091 0000 		lds r28,SW_HOME_A
+ 1970 0bd2 C130      		cpi r28,lo8(1)
+ 1971 0bd4 09F0      		breq .+2
+ 1972 0bd6 D9C0      		rjmp .L155
+ 494:DME_2012D.c   **** 				{
+ 495:DME_2012D.c   **** 					TX0_char(0x1B);TX0_char(0x02);TX0_char(0x00);TX0_char(0x11);TX0_char(0x00);TX0_char(0x01);TX0_
+ 1973               		.stabn 68,0,495,.LM267-main
+ 1974               	.LM267:
+ 1975 0bd8 8BE1      		ldi r24,lo8(27)
+ 1976 0bda 0E94 0000 		call TX0_char
+ 1977 0bde 82E0      		ldi r24,lo8(2)
+ 1978 0be0 0E94 0000 		call TX0_char
+ 1979 0be4 80E0      		ldi r24,lo8(0)
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 46
+
+
+ 1980 0be6 0E94 0000 		call TX0_char
+ 1981 0bea 81E1      		ldi r24,lo8(17)
+ 1982 0bec 0E94 0000 		call TX0_char
+ 1983 0bf0 80E0      		ldi r24,lo8(0)
+ 1984 0bf2 0E94 0000 		call TX0_char
+ 1985 0bf6 8C2F      		mov r24,r28
+ 1986 0bf8 0E94 0000 		call TX0_char
+ 1987 0bfc 82E0      		ldi r24,lo8(2)
+ 1988 0bfe B6CF      		rjmp .L193
+ 1989               	.L166:
+ 496:DME_2012D.c   **** 					Beep();
+ 497:DME_2012D.c   **** 					
+ 498:DME_2012D.c   **** 				}
+ 499:DME_2012D.c   **** 	
+ 500:DME_2012D.c   **** 			}else if((Key_Input == 0xBF) && (READY_FLAG==1)){
+ 1990               		.stabn 68,0,500,.LM268-main
+ 1991               	.LM268:
+ 1992 0c00 9F3B      		cpi r25,lo8(-65)
+ 1993 0c02 F9F4      		brne .L169
+ 1994 0c04 8091 0000 		lds r24,READY_FLAG
+ 1995 0c08 8130      		cpi r24,lo8(1)
+ 1996 0c0a D9F4      		brne .L169
+ 501:DME_2012D.c   **** 				//Service A Down SW
+ 502:DME_2012D.c   **** 				Key_Flag =1;
+ 1997               		.stabn 68,0,502,.LM269-main
+ 1998               	.LM269:
+ 1999 0c0c 8093 0000 		sts Key_Flag,r24
+ 503:DME_2012D.c   **** 				if(SW_HOME_A == 1)
+ 2000               		.stabn 68,0,503,.LM270-main
+ 2001               	.LM270:
+ 2002 0c10 C091 0000 		lds r28,SW_HOME_A
+ 2003 0c14 C130      		cpi r28,lo8(1)
+ 2004 0c16 09F0      		breq .+2
+ 2005 0c18 B8C0      		rjmp .L155
+ 504:DME_2012D.c   **** 				{
+ 505:DME_2012D.c   **** 					TX0_char(0x1B);TX0_char(0x02);TX0_char(0x00);TX0_char(0x11);TX0_char(0x00);TX0_char(0x01);TX0_
+ 2006               		.stabn 68,0,505,.LM271-main
+ 2007               	.LM271:
+ 2008 0c1a 8BE1      		ldi r24,lo8(27)
+ 2009 0c1c 0E94 0000 		call TX0_char
+ 2010 0c20 82E0      		ldi r24,lo8(2)
+ 2011 0c22 0E94 0000 		call TX0_char
+ 2012 0c26 80E0      		ldi r24,lo8(0)
+ 2013 0c28 0E94 0000 		call TX0_char
+ 2014 0c2c 81E1      		ldi r24,lo8(17)
+ 2015 0c2e 0E94 0000 		call TX0_char
+ 2016 0c32 80E0      		ldi r24,lo8(0)
+ 2017 0c34 0E94 0000 		call TX0_char
+ 2018 0c38 8C2F      		mov r24,r28
+ 2019 0c3a 0E94 0000 		call TX0_char
+ 2020 0c3e 83E0      		ldi r24,lo8(3)
+ 2021 0c40 95CF      		rjmp .L193
+ 2022               	.L169:
+ 506:DME_2012D.c   **** 					Beep();
+ 507:DME_2012D.c   **** 					
+ 508:DME_2012D.c   **** 				}
+ 509:DME_2012D.c   **** 	
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 47
+
+
+ 510:DME_2012D.c   **** 			}else if((Key_Input == 0xFB) && (READY_FLAG==1)){
+ 2023               		.stabn 68,0,510,.LM272-main
+ 2024               	.LM272:
+ 2025 0c42 9B3F      		cpi r25,lo8(-5)
+ 2026 0c44 F9F4      		brne .L172
+ 2027 0c46 8091 0000 		lds r24,READY_FLAG
+ 2028 0c4a 8130      		cpi r24,lo8(1)
+ 2029 0c4c D9F4      		brne .L172
+ 511:DME_2012D.c   **** 				//Service B UP SW
+ 512:DME_2012D.c   **** 				Key_Flag =1;
+ 2030               		.stabn 68,0,512,.LM273-main
+ 2031               	.LM273:
+ 2032 0c4e 8093 0000 		sts Key_Flag,r24
+ 513:DME_2012D.c   **** 				if(SW_HOME_B == 1)
+ 2033               		.stabn 68,0,513,.LM274-main
+ 2034               	.LM274:
+ 2035 0c52 C091 0000 		lds r28,SW_HOME_B
+ 2036 0c56 C130      		cpi r28,lo8(1)
+ 2037 0c58 09F0      		breq .+2
+ 2038 0c5a 97C0      		rjmp .L155
+ 514:DME_2012D.c   **** 				{
+ 515:DME_2012D.c   **** 					TX1_char(0x1B);TX1_char(0x02);TX1_char(0x00);TX1_char(0x11);TX1_char(0x00);TX1_char(0x01);TX1_
+ 2039               		.stabn 68,0,515,.LM275-main
+ 2040               	.LM275:
+ 2041 0c5c 8BE1      		ldi r24,lo8(27)
+ 2042 0c5e 0E94 0000 		call TX1_char
+ 2043 0c62 82E0      		ldi r24,lo8(2)
+ 2044 0c64 0E94 0000 		call TX1_char
+ 2045 0c68 80E0      		ldi r24,lo8(0)
+ 2046 0c6a 0E94 0000 		call TX1_char
+ 2047 0c6e 81E1      		ldi r24,lo8(17)
+ 2048 0c70 0E94 0000 		call TX1_char
+ 2049 0c74 80E0      		ldi r24,lo8(0)
+ 2050 0c76 0E94 0000 		call TX1_char
+ 2051 0c7a 8C2F      		mov r24,r28
+ 2052 0c7c 0E94 0000 		call TX1_char
+ 2053 0c80 82E0      		ldi r24,lo8(2)
+ 2054 0c82 20C0      		rjmp .L191
+ 2055               	.L172:
+ 516:DME_2012D.c   **** 					Beep();
+ 517:DME_2012D.c   **** 				}
+ 518:DME_2012D.c   **** 	
+ 519:DME_2012D.c   **** 			}else if((Key_Input == 0xFD) && (READY_FLAG==1)){
+ 2056               		.stabn 68,0,519,.LM276-main
+ 2057               	.LM276:
+ 2058 0c84 9D3F      		cpi r25,lo8(-3)
+ 2059 0c86 49F5      		brne .L175
+ 2060 0c88 8091 0000 		lds r24,READY_FLAG
+ 2061 0c8c 8130      		cpi r24,lo8(1)
+ 2062 0c8e 29F5      		brne .L175
+ 520:DME_2012D.c   **** 				//Service B Down SW
+ 521:DME_2012D.c   **** 				Key_Flag =1;
+ 2063               		.stabn 68,0,521,.LM277-main
+ 2064               	.LM277:
+ 2065 0c90 8093 0000 		sts Key_Flag,r24
+ 522:DME_2012D.c   **** 				if(SW_HOME_B == 1)
+ 2066               		.stabn 68,0,522,.LM278-main
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 48
+
+
+ 2067               	.LM278:
+ 2068 0c94 C091 0000 		lds r28,SW_HOME_B
+ 2069 0c98 C130      		cpi r28,lo8(1)
+ 2070 0c9a 09F0      		breq .+2
+ 2071 0c9c 76C0      		rjmp .L155
+ 523:DME_2012D.c   **** 				{
+ 524:DME_2012D.c   **** 					TX1_char(0x1B);TX1_char(0x02);TX1_char(0x00);TX1_char(0x11);TX1_char(0x00);TX1_char(0x01);TX1_
+ 2072               		.stabn 68,0,524,.LM279-main
+ 2073               	.LM279:
+ 2074 0c9e 8BE1      		ldi r24,lo8(27)
+ 2075 0ca0 0E94 0000 		call TX1_char
+ 2076 0ca4 82E0      		ldi r24,lo8(2)
+ 2077 0ca6 0E94 0000 		call TX1_char
+ 2078 0caa 80E0      		ldi r24,lo8(0)
+ 2079 0cac 0E94 0000 		call TX1_char
+ 2080 0cb0 81E1      		ldi r24,lo8(17)
+ 2081 0cb2 0E94 0000 		call TX1_char
+ 2082 0cb6 80E0      		ldi r24,lo8(0)
+ 2083 0cb8 0E94 0000 		call TX1_char
+ 2084 0cbc 8C2F      		mov r24,r28
+ 2085 0cbe 0E94 0000 		call TX1_char
+ 2086 0cc2 83E0      		ldi r24,lo8(3)
+ 2087               	.L191:
+ 2088 0cc4 0E94 0000 		call TX1_char
+ 2089 0cc8 8BE1      		ldi r24,lo8(27)
+ 2090 0cca 0E94 0000 		call TX1_char
+ 2091 0cce 83E0      		ldi r24,lo8(3)
+ 2092 0cd0 0E94 0000 		call TX1_char
+ 2093               	.L192:
+ 525:DME_2012D.c   **** 					Beep();
+ 2094               		.stabn 68,0,525,.LM280-main
+ 2095               	.LM280:
+ 2096 0cd4 0E94 0000 		call Beep
+ 2097 0cd8 58C0      		rjmp .L155
+ 2098               	.L175:
+ 526:DME_2012D.c   **** 				}
+ 527:DME_2012D.c   **** 	
+ 528:DME_2012D.c   **** 			}else if((Key_Input == 0x7F) && (READY_FLAG==1)){
+ 2099               		.stabn 68,0,528,.LM281-main
+ 2100               	.LM281:
+ 2101 0cda 9F37      		cpi r25,lo8(127)
+ 2102 0cdc 59F5      		brne .L178
+ 2103 0cde 8091 0000 		lds r24,READY_FLAG
+ 2104 0ce2 8130      		cpi r24,lo8(1)
+ 2105 0ce4 39F5      		brne .L178
+ 529:DME_2012D.c   **** 				//Service A Select SW
+ 530:DME_2012D.c   **** 				Key_Flag =1;
+ 2106               		.stabn 68,0,530,.LM282-main
+ 2107               	.LM282:
+ 2108 0ce6 8093 0000 		sts Key_Flag,r24
+ 531:DME_2012D.c   **** 				if(SW_HOME_A == 1)
+ 2109               		.stabn 68,0,531,.LM283-main
+ 2110               	.LM283:
+ 2111 0cea C091 0000 		lds r28,SW_HOME_A
+ 2112 0cee C130      		cpi r28,lo8(1)
+ 2113 0cf0 09F0      		breq .+2
+ 2114 0cf2 4BC0      		rjmp .L155
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 49
+
+
+ 532:DME_2012D.c   **** 				{
+ 533:DME_2012D.c   **** 					TX0_char(0x1B);TX0_char(0x02);TX0_char(0x00);TX0_char(0x11);TX0_char(0x00);TX0_char(0x01);TX0_
+ 2115               		.stabn 68,0,533,.LM284-main
+ 2116               	.LM284:
+ 2117 0cf4 8BE1      		ldi r24,lo8(27)
+ 2118 0cf6 0E94 0000 		call TX0_char
+ 2119 0cfa 82E0      		ldi r24,lo8(2)
+ 2120 0cfc 0E94 0000 		call TX0_char
+ 2121 0d00 80E0      		ldi r24,lo8(0)
+ 2122 0d02 0E94 0000 		call TX0_char
+ 2123 0d06 81E1      		ldi r24,lo8(17)
+ 2124 0d08 0E94 0000 		call TX0_char
+ 2125 0d0c 80E0      		ldi r24,lo8(0)
+ 2126 0d0e 0E94 0000 		call TX0_char
+ 2127 0d12 8C2F      		mov r24,r28
+ 2128 0d14 0E94 0000 		call TX0_char
+ 2129 0d18 85E0      		ldi r24,lo8(5)
+ 2130 0d1a 0E94 0000 		call TX0_char
+ 2131 0d1e 8BE1      		ldi r24,lo8(27)
+ 2132 0d20 0E94 0000 		call TX0_char
+ 2133 0d24 83E0      		ldi r24,lo8(3)
+ 2134 0d26 0E94 0000 		call TX0_char
+ 534:DME_2012D.c   **** 					Beep();
+ 2135               		.stabn 68,0,534,.LM285-main
+ 2136               	.LM285:
+ 2137 0d2a 0E94 0000 		call Beep
+ 535:DME_2012D.c   **** 					SW_HOME_A=0;
+ 2138               		.stabn 68,0,535,.LM286-main
+ 2139               	.LM286:
+ 2140 0d2e 1092 0000 		sts SW_HOME_A,__zero_reg__
+ 2141 0d32 2BC0      		rjmp .L155
+ 2142               	.L178:
+ 536:DME_2012D.c   **** 					
+ 537:DME_2012D.c   **** 				}
+ 538:DME_2012D.c   **** 	
+ 539:DME_2012D.c   **** 			}else if((Key_Input == 0xFE) && (READY_FLAG==1)){
+ 2143               		.stabn 68,0,539,.LM287-main
+ 2144               	.LM287:
+ 2145 0d34 9E3F      		cpi r25,lo8(-2)
+ 2146 0d36 49F5      		brne .L155
+ 2147 0d38 8091 0000 		lds r24,READY_FLAG
+ 2148 0d3c 8130      		cpi r24,lo8(1)
+ 2149 0d3e 29F5      		brne .L155
+ 540:DME_2012D.c   **** 				//Service B Select SW
+ 541:DME_2012D.c   **** 				Key_Flag =1;
+ 2150               		.stabn 68,0,541,.LM288-main
+ 2151               	.LM288:
+ 2152 0d40 8093 0000 		sts Key_Flag,r24
+ 542:DME_2012D.c   **** 				if(SW_HOME_B == 1)
+ 2153               		.stabn 68,0,542,.LM289-main
+ 2154               	.LM289:
+ 2155 0d44 C091 0000 		lds r28,SW_HOME_B
+ 2156 0d48 C130      		cpi r28,lo8(1)
+ 2157 0d4a F9F4      		brne .L155
+ 543:DME_2012D.c   **** 				{
+ 544:DME_2012D.c   **** 					TX1_char(0x1B);TX1_char(0x02);TX1_char(0x00);TX1_char(0x11);TX1_char(0x00);TX1_char(0x01);TX1_
+ 2158               		.stabn 68,0,544,.LM290-main
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 50
+
+
+ 2159               	.LM290:
+ 2160 0d4c 8BE1      		ldi r24,lo8(27)
+ 2161 0d4e 0E94 0000 		call TX1_char
+ 2162 0d52 82E0      		ldi r24,lo8(2)
+ 2163 0d54 0E94 0000 		call TX1_char
+ 2164 0d58 80E0      		ldi r24,lo8(0)
+ 2165 0d5a 0E94 0000 		call TX1_char
+ 2166 0d5e 81E1      		ldi r24,lo8(17)
+ 2167 0d60 0E94 0000 		call TX1_char
+ 2168 0d64 80E0      		ldi r24,lo8(0)
+ 2169 0d66 0E94 0000 		call TX1_char
+ 2170 0d6a 8C2F      		mov r24,r28
+ 2171 0d6c 0E94 0000 		call TX1_char
+ 2172 0d70 85E0      		ldi r24,lo8(5)
+ 2173 0d72 0E94 0000 		call TX1_char
+ 2174 0d76 8BE1      		ldi r24,lo8(27)
+ 2175 0d78 0E94 0000 		call TX1_char
+ 2176 0d7c 83E0      		ldi r24,lo8(3)
+ 2177 0d7e 0E94 0000 		call TX1_char
+ 545:DME_2012D.c   **** 					Beep();
+ 2178               		.stabn 68,0,545,.LM291-main
+ 2179               	.LM291:
+ 2180 0d82 0E94 0000 		call Beep
+ 546:DME_2012D.c   **** 					SW_HOME_B=0;
+ 2181               		.stabn 68,0,546,.LM292-main
+ 2182               	.LM292:
+ 2183 0d86 1092 0000 		sts SW_HOME_B,__zero_reg__
+ 2184               	.L155:
+ 547:DME_2012D.c   **** 				}
+ 548:DME_2012D.c   **** 			}
+ 549:DME_2012D.c   **** 
+ 550:DME_2012D.c   **** 		}//if(Key_Flag ==0)	
+ 551:DME_2012D.c   **** 		
+ 552:DME_2012D.c   **** 		if((Key_Clear == 0x00) && (Key_Clear_Flag==0))
+ 2185               		.stabn 68,0,552,.LM293-main
+ 2186               	.LM293:
+ 2187 0d8a 8091 0000 		lds r24,Key_Clear
+ 2188 0d8e 8823      		tst r24
+ 2189 0d90 09F0      		breq .+2
+ 2190 0d92 6DC0      		rjmp .L183
+ 2191 0d94 8091 0000 		lds r24,Key_Clear_Flag
+ 2192 0d98 8823      		tst r24
+ 2193 0d9a 09F0      		breq .+2
+ 2194 0d9c 68C0      		rjmp .L183
+ 553:DME_2012D.c   **** 		{
+ 554:DME_2012D.c   **** 
+ 555:DME_2012D.c   **** 		  	Key_Clear_Flag =1;
+ 2195               		.stabn 68,0,555,.LM294-main
+ 2196               	.LM294:
+ 2197 0d9e 81E0      		ldi r24,lo8(1)
+ 2198 0da0 8093 0000 		sts Key_Clear_Flag,r24
+ 556:DME_2012D.c   **** 		  	cbi(PORTA,3); //ETI ON
+ 2199               		.stabn 68,0,556,.LM295-main
+ 2200               	.LM295:
+ 2201 0da4 DB98      		cbi 59-0x20,3
+ 557:DME_2012D.c   **** 		  	cbi(PORTA,2); //ETI OFF
+ 2202               		.stabn 68,0,557,.LM296-main
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 51
+
+
+ 2203               	.LM296:
+ 2204 0da6 DA98      		cbi 59-0x20,2
+ 558:DME_2012D.c   **** 		  	
+ 559:DME_2012D.c   **** 				cbi(PORTA,1); //Sync
+ 2205               		.stabn 68,0,559,.LM297-main
+ 2206               	.LM297:
+ 2207 0da8 D998      		cbi 59-0x20,1
+ 560:DME_2012D.c   **** 				cbi(PORTA,0); //Sync
+ 2208               		.stabn 68,0,560,.LM298-main
+ 2209               	.LM298:
+ 2210 0daa D898      		cbi 59-0x20,0
+ 561:DME_2012D.c   **** 
+ 562:DME_2012D.c   **** 				cbi(PORTF,4); //Fcnt
+ 2211               		.stabn 68,0,562,.LM299-main
+ 2212               	.LM299:
+ 2213 0dac 8091 6200 		lds r24,98
+ 2214 0db0 8F7E      		andi r24,lo8(-17)
+ 2215 0db2 8093 6200 		sts 98,r24
+ 563:DME_2012D.c   **** 				cbi(PORTF,2); //Fcrc
+ 2216               		.stabn 68,0,563,.LM300-main
+ 2217               	.LM300:
+ 2218 0db6 8091 6200 		lds r24,98
+ 2219 0dba 8B7F      		andi r24,lo8(-5)
+ 2220 0dbc 8093 6200 		sts 98,r24
+ 564:DME_2012D.c   **** 				cbi(PORTF,0); //Hcrc
+ 2221               		.stabn 68,0,564,.LM301-main
+ 2222               	.LM301:
+ 2223 0dc0 8091 6200 		lds r24,98
+ 2224 0dc4 8E7F      		andi r24,lo8(-2)
+ 2225 0dc6 8093 6200 		sts 98,r24
+ 565:DME_2012D.c   **** 
+ 566:DME_2012D.c   **** 				cbi(PORTF,5); //Fcnt
+ 2226               		.stabn 68,0,566,.LM302-main
+ 2227               	.LM302:
+ 2228 0dca 8091 6200 		lds r24,98
+ 2229 0dce 8F7D      		andi r24,lo8(-33)
+ 2230 0dd0 8093 6200 		sts 98,r24
+ 567:DME_2012D.c   **** 				cbi(PORTF,3); //Fcrc
+ 2231               		.stabn 68,0,567,.LM303-main
+ 2232               	.LM303:
+ 2233 0dd4 8091 6200 		lds r24,98
+ 2234 0dd8 877F      		andi r24,lo8(-9)
+ 2235 0dda 8093 6200 		sts 98,r24
+ 568:DME_2012D.c   **** 				cbi(PORTF,1); //Hcrc
+ 2236               		.stabn 68,0,568,.LM304-main
+ 2237               	.LM304:
+ 2238 0dde 8091 6200 		lds r24,98
+ 2239 0de2 8D7F      		andi r24,lo8(-3)
+ 2240 0de4 8093 6200 		sts 98,r24
+ 569:DME_2012D.c   **** 
+ 570:DME_2012D.c   **** 				cbi(PORTD,5);// ETI Fault
+ 2241               		.stabn 68,0,570,.LM305-main
+ 2242               	.LM305:
+ 2243 0de8 9598      		cbi 50-0x20,5
+ 571:DME_2012D.c   **** 				cbi(PORTD,6);// Buzzer Out
+ 2244               		.stabn 68,0,571,.LM306-main
+ 2245               	.LM306:
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 52
+
+
+ 2246 0dea 9698      		cbi 50-0x20,6
+ 572:DME_2012D.c   ****   			
+ 573:DME_2012D.c   ****   			ETI_LOS=inp(PINE) & 0xC0;
+ 2247               		.stabn 68,0,573,.LM307-main
+ 2248               	.LM307:
+ 2249 0dec 81B1      		in r24,33-0x20
+ 2250 0dee 807C      		andi r24,lo8(-64)
+ 2251 0df0 8093 0000 		sts ETI_LOS,r24
+ 574:DME_2012D.c   ****   			if(ETI_LOS == 0xC0){	sbi(PORTA,3); } else{ sbi(PORTA,2); }
+ 2252               		.stabn 68,0,574,.LM308-main
+ 2253               	.LM308:
+ 2254 0df4 803C      		cpi r24,lo8(-64)
+ 2255 0df6 11F4      		brne .L184
+ 2256 0df8 DB9A      		sbi 59-0x20,3
+ 2257 0dfa 01C0      		rjmp .L185
+ 2258               	.L184:
+ 2259 0dfc DA9A      		sbi 59-0x20,2
+ 2260               	.L185:
+ 575:DME_2012D.c   **** 				TX0_char(0x1B);TX0_char(0x02);TX0_char(0x00);TX0_char(0x11);TX0_char(0x00);TX0_char(0x01);TX0_c
+ 2261               		.stabn 68,0,575,.LM309-main
+ 2262               	.LM309:
+ 2263 0dfe 8BE1      		ldi r24,lo8(27)
+ 2264 0e00 0E94 0000 		call TX0_char
+ 2265 0e04 82E0      		ldi r24,lo8(2)
+ 2266 0e06 0E94 0000 		call TX0_char
+ 2267 0e0a 80E0      		ldi r24,lo8(0)
+ 2268 0e0c 0E94 0000 		call TX0_char
+ 2269 0e10 81E1      		ldi r24,lo8(17)
+ 2270 0e12 0E94 0000 		call TX0_char
+ 2271 0e16 80E0      		ldi r24,lo8(0)
+ 2272 0e18 0E94 0000 		call TX0_char
+ 2273 0e1c 81E0      		ldi r24,lo8(1)
+ 2274 0e1e 0E94 0000 		call TX0_char
+ 2275 0e22 84E0      		ldi r24,lo8(4)
+ 2276 0e24 0E94 0000 		call TX0_char
+ 2277 0e28 8BE1      		ldi r24,lo8(27)
+ 2278 0e2a 0E94 0000 		call TX0_char
+ 2279 0e2e 83E0      		ldi r24,lo8(3)
+ 2280 0e30 0E94 0000 		call TX0_char
+ 576:DME_2012D.c   **** 				TX1_char(0x1B);TX1_char(0x02);TX1_char(0x00);TX1_char(0x11);TX1_char(0x00);TX1_char(0x01);TX1_c
+ 2281               		.stabn 68,0,576,.LM310-main
+ 2282               	.LM310:
+ 2283 0e34 8BE1      		ldi r24,lo8(27)
+ 2284 0e36 0E94 0000 		call TX1_char
+ 2285 0e3a 82E0      		ldi r24,lo8(2)
+ 2286 0e3c 0E94 0000 		call TX1_char
+ 2287 0e40 80E0      		ldi r24,lo8(0)
+ 2288 0e42 0E94 0000 		call TX1_char
+ 2289 0e46 81E1      		ldi r24,lo8(17)
+ 2290 0e48 0E94 0000 		call TX1_char
+ 2291 0e4c 80E0      		ldi r24,lo8(0)
+ 2292 0e4e 0E94 0000 		call TX1_char
+ 2293 0e52 81E0      		ldi r24,lo8(1)
+ 2294 0e54 0E94 0000 		call TX1_char
+ 2295 0e58 84E0      		ldi r24,lo8(4)
+ 2296 0e5a 0E94 0000 		call TX1_char
+ 2297 0e5e 8BE1      		ldi r24,lo8(27)
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 53
+
+
+ 2298 0e60 0E94 0000 		call TX1_char
+ 2299 0e64 83E0      		ldi r24,lo8(3)
+ 2300 0e66 0E94 0000 		call TX1_char
+ 577:DME_2012D.c   **** 
+ 578:DME_2012D.c   **** 				Beep();
+ 2301               		.stabn 68,0,578,.LM311-main
+ 2302               	.LM311:
+ 2303 0e6a 0E94 0000 		call Beep
+ 2304               	.L183:
+ 579:DME_2012D.c   **** 		}
+ 580:DME_2012D.c   **** 		if(Key_Clear == 0x01){	Key_Clear_Flag =0; RM_RST_KEY_Flag=0;}
+ 2305               		.stabn 68,0,580,.LM312-main
+ 2306               	.LM312:
+ 2307 0e6e 9091 0000 		lds r25,Key_Clear
+ 2308 0e72 9130      		cpi r25,lo8(1)
+ 2309 0e74 21F4      		brne .L186
+ 2310 0e76 1092 0000 		sts Key_Clear_Flag,__zero_reg__
+ 2311 0e7a 1092 0000 		sts RM_RST_KEY_Flag,__zero_reg__
+ 2312               	.L186:
+ 581:DME_2012D.c   **** 		if(Key_Input == 0xFF){	Key_Flag =0; }
+ 2313               		.stabn 68,0,581,.LM313-main
+ 2314               	.LM313:
+ 2315 0e7e 8091 0000 		lds r24,Key_Input
+ 2316 0e82 8F3F      		cpi r24,lo8(-1)
+ 2317 0e84 11F4      		brne .L187
+ 2318 0e86 1092 0000 		sts Key_Flag,__zero_reg__
+ 2319               	.L187:
+ 582:DME_2012D.c   **** 
+ 583:DME_2012D.c   **** 		if((Key_Clear == 0x00) && (Key_Input==0xF9)&& (RM_RST_KEY_Flag==0))
+ 2320               		.stabn 68,0,583,.LM314-main
+ 2321               	.LM314:
+ 2322 0e8a 9923      		tst r25
+ 2323 0e8c 09F0      		breq .+2
+ 2324 0e8e E4CC      		rjmp .L190
+ 2325 0e90 893F      		cpi r24,lo8(-7)
+ 2326 0e92 09F0      		breq .+2
+ 2327 0e94 E1CC      		rjmp .L190
+ 2328 0e96 C091 0000 		lds r28,RM_RST_KEY_Flag
+ 2329 0e9a CC23      		tst r28
+ 2330 0e9c 09F0      		breq .+2
+ 2331 0e9e DCCC      		rjmp .L190
+ 584:DME_2012D.c   **** 		{
+ 585:DME_2012D.c   **** 				RM_RST_KEY_Flag =1;
+ 2332               		.stabn 68,0,585,.LM315-main
+ 2333               	.LM315:
+ 2334 0ea0 01E0      		ldi r16,lo8(1)
+ 2335 0ea2 0093 0000 		sts RM_RST_KEY_Flag,r16
+ 586:DME_2012D.c   **** 				sbi(PORTD,7);//buzzer on
+ 2336               		.stabn 68,0,586,.LM316-main
+ 2337               	.LM316:
+ 2338 0ea6 979A      		sbi 50-0x20,7
+ 587:DME_2012D.c   **** 				//Led On
+ 588:DME_2012D.c   **** 				PORTA = 0xFF;
+ 2339               		.stabn 68,0,588,.LM317-main
+ 2340               	.LM317:
+ 2341 0ea8 1FEF      		ldi r17,lo8(-1)
+ 2342 0eaa 1BBB      		out 59-0x20,r17
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 54
+
+
+ 589:DME_2012D.c   **** 				PORTF = 0xFF;
+ 2343               		.stabn 68,0,589,.LM318-main
+ 2344               	.LM318:
+ 2345 0eac 1093 6200 		sts 98,r17
+ 590:DME_2012D.c   **** 				Delay_ms(500);
+ 2346               		.stabn 68,0,590,.LM319-main
+ 2347               	.LM319:
+ 2348 0eb0 84EF      		ldi r24,lo8(500)
+ 2349 0eb2 91E0      		ldi r25,hi8(500)
+ 2350 0eb4 0E94 0000 		call Delay_ms
+ 591:DME_2012D.c   **** 				//LED Off
+ 592:DME_2012D.c   **** 				PORTA = 0x00;
+ 2351               		.stabn 68,0,592,.LM320-main
+ 2352               	.LM320:
+ 2353 0eb8 CBBB      		out 59-0x20,r28
+ 593:DME_2012D.c   **** 				PORTF = 0x00;
+ 2354               		.stabn 68,0,593,.LM321-main
+ 2355               	.LM321:
+ 2356 0eba C093 6200 		sts 98,r28
+ 594:DME_2012D.c   **** 				cbi(PORTD,7);//buzzer off
+ 2357               		.stabn 68,0,594,.LM322-main
+ 2358               	.LM322:
+ 2359 0ebe 9798      		cbi 50-0x20,7
+ 595:DME_2012D.c   **** 				cbi(PORTD,5);// ETI Fault
+ 2360               		.stabn 68,0,595,.LM323-main
+ 2361               	.LM323:
+ 2362 0ec0 9598      		cbi 50-0x20,5
+ 596:DME_2012D.c   **** 				cbi(PORTD,6);// Buzzer Out
+ 2363               		.stabn 68,0,596,.LM324-main
+ 2364               	.LM324:
+ 2365 0ec2 9698      		cbi 50-0x20,6
+ 597:DME_2012D.c   **** 	
+ 598:DME_2012D.c   **** 				ETI_LOS_TEMP=0xFF;
+ 2366               		.stabn 68,0,598,.LM325-main
+ 2367               	.LM325:
+ 2368 0ec4 1093 0000 		sts ETI_LOS_TEMP,r17
+ 599:DME_2012D.c   **** 				Key_Flag =0;			
+ 2369               		.stabn 68,0,599,.LM326-main
+ 2370               	.LM326:
+ 2371 0ec8 C093 0000 		sts Key_Flag,r28
+ 600:DME_2012D.c   **** 				SW_HOME_A =0;
+ 2372               		.stabn 68,0,600,.LM327-main
+ 2373               	.LM327:
+ 2374 0ecc C093 0000 		sts SW_HOME_A,r28
+ 601:DME_2012D.c   **** 				SW_HOME_B =0;
+ 2375               		.stabn 68,0,601,.LM328-main
+ 2376               	.LM328:
+ 2377 0ed0 C093 0000 		sts SW_HOME_B,r28
+ 602:DME_2012D.c   **** 	
+ 603:DME_2012D.c   **** 				TX0_char(0x1B);TX0_char(0x02);TX0_char(0x00);TX0_char(0x11);TX0_char(0x00);TX0_char(0x01);TX0_c
+ 2378               		.stabn 68,0,603,.LM329-main
+ 2379               	.LM329:
+ 2380 0ed4 8BE1      		ldi r24,lo8(27)
+ 2381 0ed6 0E94 0000 		call TX0_char
+ 2382 0eda 82E0      		ldi r24,lo8(2)
+ 2383 0edc 0E94 0000 		call TX0_char
+ 2384 0ee0 8C2F      		mov r24,r28
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 55
+
+
+ 2385 0ee2 0E94 0000 		call TX0_char
+ 2386 0ee6 81E1      		ldi r24,lo8(17)
+ 2387 0ee8 0E94 0000 		call TX0_char
+ 2388 0eec 8C2F      		mov r24,r28
+ 2389 0eee 0E94 0000 		call TX0_char
+ 2390 0ef2 802F      		mov r24,r16
+ 2391 0ef4 0E94 0000 		call TX0_char
+ 2392 0ef8 86E0      		ldi r24,lo8(6)
+ 2393 0efa 0E94 0000 		call TX0_char
+ 2394 0efe 8BE1      		ldi r24,lo8(27)
+ 2395 0f00 0E94 0000 		call TX0_char
+ 2396 0f04 83E0      		ldi r24,lo8(3)
+ 2397 0f06 0E94 0000 		call TX0_char
+ 604:DME_2012D.c   **** 				TX1_char(0x1B);TX1_char(0x02);TX1_char(0x00);TX1_char(0x11);TX1_char(0x00);TX1_char(0x01);TX1_c
+ 2398               		.stabn 68,0,604,.LM330-main
+ 2399               	.LM330:
+ 2400 0f0a 8BE1      		ldi r24,lo8(27)
+ 2401 0f0c 0E94 0000 		call TX1_char
+ 2402 0f10 82E0      		ldi r24,lo8(2)
+ 2403 0f12 0E94 0000 		call TX1_char
+ 2404 0f16 8C2F      		mov r24,r28
+ 2405 0f18 0E94 0000 		call TX1_char
+ 2406 0f1c 81E1      		ldi r24,lo8(17)
+ 2407 0f1e 0E94 0000 		call TX1_char
+ 2408 0f22 8C2F      		mov r24,r28
+ 2409 0f24 0E94 0000 		call TX1_char
+ 2410 0f28 802F      		mov r24,r16
+ 2411 0f2a 0E94 0000 		call TX1_char
+ 2412 0f2e 86E0      		ldi r24,lo8(6)
+ 2413 0f30 0E94 0000 		call TX1_char
+ 2414 0f34 8BE1      		ldi r24,lo8(27)
+ 2415 0f36 0E94 0000 		call TX1_char
+ 2416 0f3a 83E0      		ldi r24,lo8(3)
+ 2417 0f3c 0E94 0000 		call TX1_char
+ 605:DME_2012D.c   **** 
+ 606:DME_2012D.c   **** 				Beep();
+ 2418               		.stabn 68,0,606,.LM331-main
+ 2419               	.LM331:
+ 2420 0f40 0E94 0000 		call Beep
+ 2421 0f44 89CC      		rjmp .L190
+ 607:DME_2012D.c   **** 		}
+ 608:DME_2012D.c   **** 
+ 609:DME_2012D.c   **** 				
+ 610:DME_2012D.c   **** 	}//if(Time_Flag ==1)
+ 611:DME_2012D.c   ****  }		// end of while
+ 612:DME_2012D.c   **** }			// end of main
+ 2422               		.stabn 68,0,612,.LM332-main
+ 2423               	.LM332:
+ 2424               	/* epilogue: frame size=0 */
+ 2425               	/* epilogue: noreturn */
+ 2426               	/* epilogue end (size=0) */
+ 2427               	/* function main size 955 (951) */
+ 2428               		.size	main, .-main
+ 2429               	.Lscope10:
+ 2430               		.stabs	"",36,0,0,.Lscope10-main
+ 2431               		.comm ETI_LOS,1,1
+ 2432               		.comm ETI_LOS_BUF,1,1
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 56
+
+
+ 2433               		.comm i,2,1
+ 2434               		.comm j,2,1
+ 2435               		.comm Serial_Count0,2,1
+ 2436               		.comm Buf_Count0,2,1
+ 2437               		.comm Serial_Count1,2,1
+ 2438               		.comm Buf_Count1,2,1
+ 2439               		.comm Key_Input,1,1
+ 2440               		.comm SW_HOME_A,1,1
+ 2441               		.comm SW_HOME_B,1,1
+ 2442               		.comm RXD_BUF0,30,1
+ 2443               		.comm RXD_BUF1,30,1
+ 2444               		.comm INPUT_TYPE_A,1,1
+ 2445               		.comm INPUT_TYPE_B,1,1
+ 2446               		.comm E_SYNC_A,1,1
+ 2447               		.comm E_FCNT_A,1,1
+ 2448               		.comm E_FCRC_A,1,1
+ 2449               		.comm E_HCRC_A,1,1
+ 2450               		.comm AUDIO_MUTE_A,1,1
+ 2451               		.comm E_SYNC_B,1,1
+ 2452               		.comm E_FCNT_B,1,1
+ 2453               		.comm E_FCRC_B,1,1
+ 2454               		.comm E_HCRC_B,1,1
+ 2455               		.comm AUDIO_MUTE_B,1,1
+ 2456               		.comm RM_RST_KEY,1,1
+ 2457               		.comm RM_RST_KEY_Flag,1,1
+ 2458               		.comm Key_Clear,1,1
+ 2459               		.comm Key_Clear_Flag,1,1
+ 2460               		.comm LED_TIME_Count,1,1
+ 2461               		.comm ETI_LOS_BUF0,1,1
+ 2462               		.comm ETI_LOS_BUF1,1,1
+ 2463               		.comm Log_LED_Clear_Time_Count,4,1
+ 2464               		.stabs	"ETI_LOS:G(0,11)",32,0,32,0
+ 2465               		.stabs	"ETI_LOS_BUF:G(0,11)",32,0,32,0
+ 2466               		.stabs	"ETI_LOS_TEMP:G(0,11)",32,0,32,0
+ 2467               		.stabs	"i:G(0,4)",32,0,33,0
+ 2468               		.stabs	"j:G(0,4)",32,0,33,0
+ 2469               		.stabs	"Time_Count:G(0,4)",32,0,33,0
+ 2470               		.stabs	"Serial_Count0:G(0,4)",32,0,33,0
+ 2471               		.stabs	"Buf_Count0:G(0,4)",32,0,33,0
+ 2472               		.stabs	"Serial_Time_Count0:G(0,4)",32,0,33,0
+ 2473               		.stabs	"Time_Flag:G(0,4)",32,0,33,0
+ 2474               		.stabs	"Serial_Count1:G(0,4)",32,0,34,0
+ 2475               		.stabs	"Buf_Count1:G(0,4)",32,0,34,0
+ 2476               		.stabs	"Serial_Time_Count1:G(0,4)",32,0,34,0
+ 2477               		.stabs	"Key_Input:G(0,11)",32,0,35,0
+ 2478               		.stabs	"Key_Flag:G(0,11)",32,0,35,0
+ 2479               		.stabs	"Remote_Flag:G(0,11)",32,0,35,0
+ 2480               		.stabs	"SW_HOME_A:G(0,11)",32,0,36,0
+ 2481               		.stabs	"SW_HOME_B:G(0,11)",32,0,36,0
+ 2482               		.stabs	"RXD_BUF0:G(1,1)=ar(1,2)=r(1,2);0000000000000;0000000177777;;0;29;(0,11)",32,0,38,0
+ 2483               		.stabs	"RXD_BUF1:G(1,1)",32,0,38,0
+ 2484               		.stabs	"INPUT_TYPE_A:G(0,11)",32,0,40,0
+ 2485               		.stabs	"INPUT_TYPE_B:G(0,11)",32,0,40,0
+ 2486               		.stabs	"E_SYNC_A:G(0,11)",32,0,41,0
+ 2487               		.stabs	"E_FCNT_A:G(0,11)",32,0,41,0
+ 2488               		.stabs	"E_FCRC_A:G(0,11)",32,0,41,0
+ 2489               		.stabs	"E_HCRC_A:G(0,11)",32,0,41,0
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 57
+
+
+ 2490               		.stabs	"AUDIO_MUTE_A:G(0,11)",32,0,41,0
+ 2491               		.stabs	"E_SYNC_B:G(0,11)",32,0,42,0
+ 2492               		.stabs	"E_FCNT_B:G(0,11)",32,0,42,0
+ 2493               		.stabs	"E_FCRC_B:G(0,11)",32,0,42,0
+ 2494               		.stabs	"E_HCRC_B:G(0,11)",32,0,42,0
+ 2495               		.stabs	"AUDIO_MUTE_B:G(0,11)",32,0,42,0
+ 2496               		.stabs	"RESET_FLAG:G(0,11)",32,0,44,0
+ 2497               		.stabs	"READY_FLAG:G(0,11)",32,0,44,0
+ 2498               		.stabs	"RM_RST_KEY:G(0,11)",32,0,46,0
+ 2499               		.stabs	"RM_RST_KEY_Flag:G(0,11)",32,0,46,0
+ 2500               		.stabs	"Key_Clear:G(0,11)",32,0,47,0
+ 2501               		.stabs	"Key_Clear_Flag:G(0,11)",32,0,47,0
+ 2502               		.stabs	"LED_TIME_Count:G(0,11)",32,0,49,0
+ 2503               		.stabs	"ETI_LOS_BUF0:G(0,11)",32,0,51,0
+ 2504               		.stabs	"ETI_LOS_BUF1:G(0,11)",32,0,51,0
+ 2505               		.stabs	"Log_LED_Clear_Time_Count:G(0,5)",32,0,53,0
+ 2506               		.text
+ 2507               		.stabs "",100,0,0,Letext
+ 2508               	Letext:
+ 2509               	/* File "DME_2012D.c": code 1969 = 0x07b1 (1839), prologues  64, epilogues  66 */
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 58
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 DME_2012D.c
+                            *ABS*:0000003f __SREG__
+                            *ABS*:0000003e __SP_H__
+                            *ABS*:0000003d __SP_L__
+                            *ABS*:00000000 __tmp_reg__
+                            *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s:46     .text:00000000 MCU_initialize
+C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s:109    .text:0000002a Delay_nop
+C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s:127    .text:0000002c Delay_us
+C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s:177    .text:00000042 Delay_ms
+C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s:240    .text:00000080 TX0_char
+C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s:266    .text:00000088 TX1_char
+C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s:293    .text:00000098 Beep
+C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s:342    .data:00000000 ETI_LOS_TEMP
+C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s:347    .data:00000001 Time_Count
+C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s:352    .data:00000003 Serial_Time_Count0
+C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s:359    .bss:00000000 Time_Flag
+C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s:365    .data:00000005 Serial_Time_Count1
+C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s:372    .bss:00000002 Key_Flag
+C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s:378    .bss:00000003 Remote_Flag
+C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s:384    .bss:00000004 RESET_FLAG
+C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s:390    .data:00000007 READY_FLAG
+C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s:396    .text:000000a6 __vector_18
+                            *COM*:00000002 Serial_Count0
+                            *COM*:0000001e RXD_BUF0
+                            *COM*:00000001 INPUT_TYPE_A
+                            *COM*:00000001 E_SYNC_A
+                            *COM*:00000001 E_FCNT_A
+                            *COM*:00000001 E_FCRC_A
+                            *COM*:00000001 E_HCRC_A
+                            *COM*:00000001 LED_TIME_Count
+                            *COM*:00000004 Log_LED_Clear_Time_Count
+                            *COM*:00000002 Buf_Count0
+                            *COM*:00000001 ETI_LOS_BUF0
+                            *COM*:00000001 AUDIO_MUTE_A
+C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s:767    .text:00000356 __vector_30
+                            *COM*:00000002 Serial_Count1
+                            *COM*:0000001e RXD_BUF1
+                            *COM*:00000001 INPUT_TYPE_B
+                            *COM*:00000001 E_SYNC_B
+                            *COM*:00000001 E_FCNT_B
+                            *COM*:00000001 E_FCRC_B
+                            *COM*:00000001 E_HCRC_B
+                            *COM*:00000002 Buf_Count1
+                            *COM*:00000001 ETI_LOS_BUF1
+C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s:1136   .text:00000608 __vector_12
+C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s:1389   .text:000007d2 main
+                            *COM*:00000001 SW_HOME_A
+                            *COM*:00000001 SW_HOME_B
+                            *COM*:00000001 ETI_LOS
+                            *COM*:00000001 Key_Input
+                            *COM*:00000001 RM_RST_KEY
+                            *COM*:00000001 Key_Clear
+                            *COM*:00000001 RM_RST_KEY_Flag
+                            *COM*:00000001 Key_Clear_Flag
+                            *COM*:00000001 ETI_LOS_BUF
+GAS LISTING C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s 			page 59
+
+
+                            *COM*:00000002 i
+                            *COM*:00000002 j
+                            *COM*:00000001 AUDIO_MUTE_B
+C:\DOCUME~1\happy\LOCALS~1\Temp/cc21aaaa.s:2508   .text:00000f46 Letext
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss
+__stack
